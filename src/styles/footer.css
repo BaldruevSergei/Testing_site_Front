@@ -1,0 +1,19 @@
+footer{ 
+     grid-area: footer;
+     height: 80px;
+          
+}
+footer hr{
+     width: 80%;
+     margin: 0 auto;
+     border: var(--red) 1px solid;
+}
+footer .footerInfo{
+     width: 100%;
+     justify-content: space-evenly;
+     align-items: center;
+     height: 100%;
+     list-style: none;
+     font-family: serif;
+     display: flex;
+}
