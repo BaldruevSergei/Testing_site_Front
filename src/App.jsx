@@ -9,7 +9,7 @@ function App() {
       <div className="body">
           <Header/>
           <div className="main">
-                  <section>
+                  <section> 
                     <div className="intro">
                       <div className="empty"></div>
                       <div className="intro-container">
