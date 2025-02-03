@@ -10,9 +10,10 @@ function App() {
     <>
     <BrowserRouter>
       <div className="body">
-          <Header/>
               <Routes>
                 <Route path='/' element={
+                  <>
+                  <Header/>
                   <div className="main">
                   <section> 
                     <div className="intro">
@@ -33,10 +34,11 @@ function App() {
                     </div>
                    </section>
                    </div>
+                   <Footer/>
+                   </>
                 }/>
-                   <Route path='/LoginPage' element={<LoginPage/>}></Route>
-                  </Routes>
-            <Footer/>
+                   <Route path='LoginPage/:name' element={<LoginPage/>}></Route>
+                </Routes>
       </div>
       </BrowserRouter>
     </>

@@ -6,6 +6,11 @@
     rgba(224, 210, 210, 0.6),
     var(--light-green)
     );
+  --secondary3: linear-gradient(
+    110deg,
+    rgba(174, 5, 5, 0.719),
+    rgba(3, 139, 80, 0.818)
+  );
   --light-green: #D1FFBD;
   --red: rgb(252, 129, 129);
   --yellow: rgba(252, 255, 172);
