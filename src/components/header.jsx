@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/header.css';
-
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function Header() {
      return (
           <header>
@@ -8,8 +8,9 @@ function Header() {
                <div className='logo'>"LOGOHERE"</div>
                <div className="links">
                     <ul>
-                         <li>Начало</li>
+                         <li><Link to="/">Начало</Link></li>
                          <li>Проверочные работы</li>
+                         <li>Контакты</li>
                     </ul>
                     <LoginMenu/>
                </div>
@@ -56,6 +57,7 @@ function ResponsiveMenu() {
                     <ul className="responsive-menu">
                          <li>Начало</li>
                          <li>Проверочные работы</li>
+                         <li>Контакты</li>
                     </ul>
                )}
           </div>

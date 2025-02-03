@@ -2,13 +2,18 @@ import './App.css'
 import Header from './components/header'
 import introEducation from './assets/education.png'
 import Footer from './components/footer'
+import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
+import LoginPage from './pages/loginpage';
 function App() {
 
   return (
     <>
+    <BrowserRouter>
       <div className="body">
           <Header/>
-          <div className="main">
+              <Routes>
+                <Route path='/' element={
+                  <div className="main">
                   <section> 
                     <div className="intro">
                       <div className="empty"></div>
@@ -25,13 +30,15 @@ function App() {
                       </div>
                     </div>
                     <div className="about">
-                      
                     </div>
                    </section>
-                   
-            </div>
+                   </div>
+                }/>
+                   <Route path='/LoginPage' element={<LoginPage/>}></Route>
+                  </Routes>
             <Footer/>
       </div>
+      </BrowserRouter>
     </>
   )
 }

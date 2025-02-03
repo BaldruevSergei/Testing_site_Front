@@ -17,6 +17,10 @@ header {
   font-family: serif;
   position: fixed;
 }
+header a{
+  color: black;
+  text-decoration: none;
+}
 header .logo{
   grid-column: 1;
   display: flex;justify-content: center;align-items: center;
