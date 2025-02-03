@@ -32,9 +32,10 @@
 }
 .main section{
   grid-column: 2;
+  height: 1100px;
 }
 .main .intro {
-  height: 550px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,14 +43,16 @@
 .main .intro-container {
   display: grid;
   grid-template-columns: 5% 55% 1fr;
-  height: 400px;
+  height: 500 px;
   border-radius: 45px;
   width: 90%;
   margin: 0 auto;
   background: var(--secondary2);
+  position: relative;
 }
 .main .intro-container .intro-text{
-  display: flex;justify-content: center;flex-direction: column;
+  display: flex;flex-direction: column;
+  justify-content: center;
   grid-column: 2;
   align-items: center;
 }
@@ -87,9 +90,7 @@
 }
 /* ABOUT PAGE */
 
-.main .about {
-  height: 500px;
-}
+
 
 
 

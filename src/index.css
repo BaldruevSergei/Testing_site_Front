@@ -1,0 +1,12 @@
+:root{
+  --primary: #ececec;
+  --secondary: rgba(224, 210, 210, 0.6);
+  --secondary2: linear-gradient(
+    90deg,
+    rgba(224, 210, 210, 0.6),
+    var(--light-green)
+    );
+  --light-green: #D1FFBD;
+  --red: rgb(252, 129, 129);
+  --yellow: rgba(252, 255, 172);
+}
