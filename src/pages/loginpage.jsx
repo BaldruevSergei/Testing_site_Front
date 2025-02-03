@@ -18,6 +18,12 @@ function Container({ params }){
       function toggleSignUp(){
             signUpContainer(!signUp)
       }
+      const [selectedValue, setValue] = useState('')
+      const setSelectedValue = event => {
+            const value = event.target.value;
+            setValue(value);
+            console.log(value)
+      }
       const isStudent = params.name === "student" ? true : false;
       const content = !signUp ? (
             <div className="loginContainer">
@@ -54,9 +60,9 @@ function Container({ params }){
                               <input type={show ? "text" : "password"} placeholder='Пароль' required />
                               <i className={`fa ${show ? "fa-eye-slash" : "fa-eye"}`} onClick={togglePasswordVisibility}></i>
                         </span>
-                              <select className='schoolInfo'>
+                              <select value={selectedValue} onChange={setSelectedValue} className='schoolInfo'>
                                     <option selected>Название школы</option>
-                                    <option value="">Монголия-Российская совместная школа</option>
+                                    <option value="MRJS">Монголия-Российская совместная школа</option>
                               </select>
                         <span className='remember'>
                               <input type="checkbox" id="RememberMe" />
