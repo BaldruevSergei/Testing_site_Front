@@ -43,7 +43,7 @@
 .main .intro-container {
   display: grid;
   grid-template-columns: 5% 55% 1fr;
-  height: 500 px;
+  height: 500px;
   border-radius: 45px;
   width: 90%;
   margin: 0 auto;

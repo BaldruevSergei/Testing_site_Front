@@ -22,7 +22,6 @@ function LoginMenu() {
      const toggleMenu = () => {
           setMenuOpen(!menuOpen);
      };
-
      return (
           <div>
                <div className="accountDashboard">
@@ -32,9 +31,9 @@ function LoginMenu() {
                {menuOpen && (
                     <div className="login-menu">
                          <ul>
-                              <li>Учитель</li>
-                              <li>Студент</li>
-                              <li>Админ</li>
+                              <li><Link to='/LoginPage/teacher' onClick={() => setMenuOpen(false)}>Учитель</Link></li>
+                              <li><Link to='/LoginPage/student' onClick={() => setMenuOpen(false)}>Студент</Link></li>
+                              <li><Link to='/LoginPage/admin' onClick={() => setMenuOpen(false)}>Админ</Link></li>
                          </ul>
                     </div>
                )}
@@ -55,7 +54,7 @@ function ResponsiveMenu() {
                </div>
                {menuOpen && (
                     <ul className="responsive-menu">
-                         <li>Начало</li>
+                         <li><Link to="/">Начало</Link></li>
                          <li>Проверочные работы</li>
                          <li>Контакты</li>
                     </ul>
