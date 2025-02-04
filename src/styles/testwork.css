@@ -1,0 +1,35 @@
+
+.testworkPage{
+      grid-area: main;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 20% 60% 20%;
+}
+.testwork{
+      grid-column: 2;
+      display: grid;
+      grid-template-rows: 120px repeat(2 , 1fr);
+}
+.testwork .newExams{
+      border: 1px solid gray;
+      background-color: white;
+      grid-row: 2;
+}
+.testwork .Heading{
+      background-color: var(--dark-green);
+      height: 60px;
+      display: flex;align-items: center;
+      color: white;
+      font-family: sans-serif;
+      gap: 10px;
+      font-size: 1.5rem;
+}
+.testwork .Heading span{
+      width: 50px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+}
+.testwork .Heading i{
+      border-radius: 50%;
+}
