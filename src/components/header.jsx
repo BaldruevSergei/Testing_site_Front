@@ -9,7 +9,7 @@ function Header() {
                <div className="links">
                     <ul>
                          <li><Link to="/">Начало</Link></li>
-                         <li>Проверочные работы</li>
+                         <li><Link to="/TestWork">Проверочные работы</Link></li>
                          <li>Контакты</li>
                     </ul>
                     <LoginMenu/>
@@ -55,7 +55,7 @@ function ResponsiveMenu() {
                {menuOpen && (
                     <ul className="responsive-menu">
                          <li><Link to="/">Начало</Link></li>
-                         <li>Проверочные работы</li>
+                         <li><Link to="/TestWork">Проверочные работы</Link></li>
                          <li>Контакты</li>
                     </ul>
                )}
