@@ -29,12 +29,12 @@ function LoginMenu() {
                <div className="accountDashboard">
                     <button type="button" onClick={toggleMenu}>Зайти</button>
                     <div className="userProfile"></div>
-                    <div className="login-menu" style={{ height: menuOpen ? '200px' : '0', border: menuOpen ? '' : 'transparent'}}>
+                    <div className="login-menu" style={{ height: menuOpen ? '200px' : '0', border: menuOpen ? '' : 'transparent', background: menuOpen ? '' : 'transparent'}}>
                          {menuOpen && (
                               <ul>
-                                   <li><Link to='/LoginPage/teacher' onClick={() => setMenuOpen(false)}>Учитель</Link></li>
-                                   <li><Link to='/LoginPage/student' onClick={() => setMenuOpen(false)}>Студент</Link></li>
-                                   <li><Link to='/LoginPage/admin' onClick={() => setMenuOpen(false)}>Админ</Link></li>
+                                   <li><Link to="/LoginPage" state={{role: 'Учитель'}} onClick={() => setMenuOpen(false)}>Учитель</Link></li>
+                                   <li><Link to="/LoginPage" state={{role: 'Студент'}} onClick={() => setMenuOpen(false)}>Студент</Link></li>
+                                   <li><Link to="/LoginPage" state={{role: 'Админ'}} onClick={() => setMenuOpen(false)}>Админ</Link></li>
                               </ul>
                          )}
                     </div>

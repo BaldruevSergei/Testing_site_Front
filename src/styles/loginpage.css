@@ -88,12 +88,15 @@
 .LoginPage .loginContainer p{
      font-size: 1.3rem;
      position: relative;
-     width: 100%;
-     text-align: center;
+     width: 80%;
+     display: flex;
+     gap: 50px;
 }
-.LoginPage .loginContainer p span{
+
+.LoginPage .loginContainer p span a{
      cursor: pointer;
-     text-decoration: underline;
+     font-size: 1.3rem;
+     top: 0;
 }
 .LoginPage .loginContainer form select {
      margin: 0 auto;

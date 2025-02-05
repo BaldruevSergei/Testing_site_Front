@@ -5,6 +5,7 @@ import Footer from './components/footer'
 import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
 import LoginPage from './pages/loginpage';
 import TestWork from './pages/testwork';
+
 function App() {
 
   return (
@@ -38,7 +39,7 @@ function App() {
                    <Footer/>
                    </>
                 }/>
-                   <Route path='LoginPage/:name' element={<LoginPage/>}></Route>
+                   <Route path='LoginPage' element={<LoginPage/>}></Route>
                    <Route path='TestWork' element={<TestWork/>}></Route>
                 </Routes>
       </div>
@@ -47,4 +48,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
