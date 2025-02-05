@@ -1,8 +1,61 @@
-# React + Vite
+# Testing Site Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание проекта
+Это клиентская часть системы тестирования, разработанная с использованием React и Vite. Приложение предоставляет удобный интерфейс для учителей и учеников, позволяя управлять тестами, проходить их и просматривать результаты.
 
-Currently, two official plugins are available:
+## Технологии
+- Язык программирования: JavaScript ES6+
+- Библиотека: React
+- Инструмент сборки: Vite
+- Стили: CSS
+- Управление состоянием: пропсы и контекст
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Установка и запуск
+
+1. Клонирование репозитория:
+
+```bash
+git clone https://github.com/BaldruevSergei/Testing_site_Front.git
+cd Testing_site_Front
+```
+
+2. Установка зависимостей:
+
+```bash
+npm install
+```
+
+3. Запуск приложения для разработки:
+
+```bash
+npm run dev
+```
+
+Приложение будет доступно по адресу http://localhost:5173.
+
+4. Сборка для продакшена:
+
+```bash
+npm run build
+```
+
+Собранные файлы будут находиться в папке dist.
+
+## Структура проекта
+
+src/
+├── assets/          # Статические файлы (изображения, шрифты)
+├── components/      # Повторно используемые компоненты (header, footer)
+├── pages/           # Страницы приложения (главная, логин и т.д.)
+├── styles/          # Стили (CSS-файлы)
+├── App.jsx          # Основной компонент приложения
+├── index.jsx        # Точка входа приложения
+
+## Основной функционал
+- Авторизация и регистрация пользователей
+- Управление тестами (создание, редактирование, удаление)
+- Прохождение тестов учениками
+- Просмотр результатов
+
+## Полезные ссылки
+- Backend репозиторий: https://github.com/BaldruevSergei/Exmdirect_back-
