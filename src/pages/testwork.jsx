@@ -16,15 +16,7 @@ export default function TestWork(){
 
 function Exams() {
       const currentExams = [];
-      const completedExams = [
-        {
-          id: 1,
-          name: "MATH",
-          date: "26 december 11:06",
-          topic: "4TH SEMESTER",
-          grade: "95%",
-        },
-      ];
+      const completedExams = [];
     
       const hasCurrentExams = currentExams.length > 0;
       const hasCompletedExams = completedExams.length > 0;
