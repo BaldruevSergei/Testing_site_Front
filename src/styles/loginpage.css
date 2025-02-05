@@ -62,7 +62,8 @@
 }
 .LoginPage .loginContainer form .warning{
      text-align: center;
-     color: red;
+     color: yellow;
+     width: 100%;
      font-size: 1.2rem;
 }
 .LoginPage .loginContainer form span{
@@ -89,14 +90,13 @@
      font-size: 1.3rem;
      position: relative;
      width: 80%;
-     display: flex;
-     gap: 50px;
+     text-align: center;
 }
 
-.LoginPage .loginContainer p span a{
+.LoginPage .loginContainer p span{
      cursor: pointer;
+     text-decoration: underline;
      font-size: 1.3rem;
-     top: 0;
 }
 .LoginPage .loginContainer form select {
      margin: 0 auto;
