@@ -25,7 +25,7 @@ function App() {
                          <h1>Обучение и оценки</h1>
                          <p>
                          Сдайте свой экзамен здесь проще и удобнее</p>
-                         <button>Сдать экзамен</button>
+                         <Link to='TestWork'>Сдать экзамен</Link>
                          </div>
                       <div className="intro-design">
                         <img src={introEducation}/>
