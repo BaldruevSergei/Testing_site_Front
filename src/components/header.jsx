@@ -56,9 +56,9 @@ function ResponsiveMenu() {
                </div>
                {menuOpen && (
                     <ul className="responsive-menu">
-                         <li><Link to="/">Начало</Link></li>
-                         <li><Link to="/TestWork">Проверочные работы</Link></li>
-                         <li>Контакты</li>
+                        <Link to="/"> <li>Начало</li></Link>
+                        <Link to="/TestWork"><li>Проверочные работы</li></Link>
+                        <Link><li>Контакты</li></Link> 
                     </ul>
                )}
           </div>

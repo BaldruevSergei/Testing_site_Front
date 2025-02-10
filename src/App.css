@@ -35,7 +35,7 @@
   height: 1100px;
 }
 .main .intro {
-  height: 100vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,9 +107,11 @@
   }
   .main .intro{
     width: 100%; 
+    height: 40vh;
   }
   .main .intro .intro-container{
-    width: 90%;
+    width: 500px;
+    height: 300px;
     display: flex;
     justify-content: center;
   }
