@@ -3,11 +3,8 @@ header {
   grid-row: span 1;
   display: grid;
   grid-template-columns: 20% 80%;
-  width: 80%;
+  width: 100%;
   height: 80px;
-  left: 0;
-  right: 0;
-  margin-inline: auto;
   background-color: var(--primary);
   z-index: 5;
   border-bottom: red 2px solid;
@@ -117,7 +114,7 @@ header .links .accountDashboard {
     border-bottom: var(--red) 2px solid;
 
   }
-  header .responsive-menu li{
+  header .responsive-menu a li{
     cursor: pointer;
     height: 100%;
     display: flex;
@@ -125,6 +122,9 @@ header .links .accountDashboard {
     font-family: serif;
     justify-content: center;
     align-items: center;
+  }
+  header .responsive-menu a{
+    height: 100%;
   }
   header .responsive-menu li:hover{
     background: rgb(221, 218, 218);
@@ -150,7 +150,7 @@ header .links .accountDashboard {
 header .login-menu {
   position: absolute;
   right: 0;
-  top: 52px;
+  top: 51px;
   width: 200px;
   height: 200px;
   background-color: var(--primary);
