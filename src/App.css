@@ -35,35 +35,34 @@
   height: 1100px;
 }
 .main .intro {
-  height: 70vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .main .intro-container {
-  display: grid;
-  grid-template-columns: 5% 55% 1fr;
-  height: 500px;
   border-radius: 45px;
-  width: 90%;
   margin: 0 auto;
-  background: var(--secondary2);
+  width: 80%;
+  display: flex;
+  height: 100%;
   position: relative;
+  flex-direction: column;
+  justify-content: center;
 }
 .main .intro-container .intro-text{
   display: flex;flex-direction: column;
   justify-content: center;
-  grid-column: 2;
-  align-items: center;
+  grid-column: 1;
 }
 .main .intro-container .intro-text p{
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 .main .intro-container .intro-text h1{
-  font-size: 3.5rem;
+  font-size: 5.3rem;
   font-family: sans-serif;
 }
-.main .intro-container .intro-text a {
+.main .intro-container  a {
   width: 300px;
   border-radius: 25px;
   border: var(--red) 2px solid;
@@ -78,20 +77,24 @@
   text-decoration: none;
   background-color: white;
   font-size: 1.7rem;
+
 }
 .main .intro-container .intro-text a:hover{
   background-color: var(--red);
   color: white;
 }
 .main .intro-container .intro-design{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.main .intro-container .intro-design img {
-  width: 85%;
   position: relative;
-  right: 25px;
+}
+.main .intro-container .intro-design .circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: white;
+}
+.main .intro-container .intro-design .circle:nth-of-type(1){
+
 }
 /* ABOUT PAGE */
 

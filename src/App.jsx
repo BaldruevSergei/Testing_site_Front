@@ -19,17 +19,13 @@ function App() {
                   <div className="main">
                   <section> 
                     <div className="intro">
-                      <div className="empty"></div>
                       <div className="intro-container">
                          <div className="intro-text">
                          <h1>Обучение и оценки</h1>
                          <p>
                          Сдайте свой экзамен здесь проще и удобнее</p>
-                         <Link to='TestWork'>Сдать экзамен</Link>
                          </div>
-                      <div className="intro-design">
-                        <img src={introEducation}/>
-                      </div>
+                         <Link to='TestWork'>Сдать экзамен</Link>
                       </div>
                     </div>
                     <div className="about">
