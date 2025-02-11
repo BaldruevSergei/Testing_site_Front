@@ -6,7 +6,7 @@ export default function TestWork(){
             <Header/>
             <div className="testworkPage">
                   <div className="testwork">
-                        <h1>Проверочные работы</h1>
+                        <h1>Проверочные работы, 'name'</h1>
                         <Exams/>
                   </div>
             </div>
