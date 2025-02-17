@@ -8,9 +8,9 @@ function Header() {
                <div className='logo'>"LOGOHERE"</div>
                <div className="links">
                     <ul>
-                         <li><Link to="/">Начало</Link></li>
-                         <li><Link to="/TestWork">Проверочные работы</Link></li>
-                         <li>Контакты</li>
+                         <li><Link to="/"><i class="fa fa-home"></i>Начало</Link></li>
+                         <li><Link to="/TestWork"><i class="fa fa-book"></i>Проверочные работы</Link></li>
+                         <li><Link><i class="fa fa-phone"></i>Контакты</Link></li>
                     </ul>
                     <LoginMenu/>
                </div>
@@ -56,9 +56,9 @@ function ResponsiveMenu() {
                </div>
                {menuOpen && (
                     <ul className="responsive-menu">
-                        <Link to="/"> <li>Начало</li></Link>
-                        <Link to="/TestWork"><li>Проверочные работы</li></Link>
-                        <Link><li>Контакты</li></Link> 
+                        <Link to="/"> <li><i class="fa fa-home"></i>Начало</li></Link>
+                        <Link to="/TestWork"><li><i class="fa fa-book"></i>Проверочные работы</li></Link>
+                        <Link><li><i class="fa fa-phone"></i>Контакты</li></Link> 
                     </ul>
                )}
           </div>

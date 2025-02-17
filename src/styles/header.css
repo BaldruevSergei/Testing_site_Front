@@ -50,6 +50,10 @@ header .links li{
   position: relative;
   font-size: 1.2rem;
 }
+header .links li a{
+  display: flex;
+  gap: 5px;
+}
 header .links .accountDashboard button{
   width: 80px;
   height: 25px;

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
 import LoginPage from './pages/loginpage';
 import TestWork from './pages/testwork';
 import EducationBoy from './assets/educationboy.png'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 function App() {
 
   return (
