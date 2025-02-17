@@ -15,30 +15,8 @@ function App() {
                 <Route path='/' element={
                   <>
                   <Header/>
-                  <div className="main">
-                  <section> 
-                    <div className="intro">
-                      <div className="intro-container">
-                          <div className="circle"></div>
-                         <div className="intro-text">
-                         <h1>Обучение и оценки</h1>
-                         <p>
-                         Сдайте свой экзамен здесь проще и удобнее</p>
-                         <Link to='TestWork'>
-                         <i class="fa fa-angle-double-right"></i>
-                          <span>Сдать экзамен</span> 
-                         </Link>
-                         </div>
-                         <div className="intro-design">
-                          <img src={EducationBoy} alt="" />
-                         </div>
-                      </div>
-                    </div>
-                    <div className="about">
-                    </div>
-                   </section>
-                   </div>
-                   <Footer/>
+                  <Main/>
+                  <Footer/>
                    </>
                 }/>
                    <Route path='LoginPage' element={<LoginPage/>}></Route>
@@ -49,5 +27,29 @@ function App() {
     </>
   )
 }
-
+function Main(){
+  return <div className="main">
+  <section> 
+    <div className="intro">
+      <div className="intro-container">
+          <div className="circle"></div>
+         <div className="intro-text">
+         <h1>Обучение и оценки</h1>
+         <p>
+         Сдайте свой экзамен здесь проще и удобнее</p>
+         <Link to='TestWork'>
+         <i class="fa fa-angle-double-right"></i>
+          <span>Сдать экзамен</span> 
+         </Link>
+         </div>
+         <div className="intro-design">
+          <img src={EducationBoy} alt="" />
+         </div>
+      </div>
+    </div>
+    <div className="about">
+    </div>
+   </section>
+   </div>
+}
 export default App;

@@ -56,7 +56,7 @@
   overflow: hidden;
 }
 .main .intro-container .circle{
-  background-color: white;
+  background-color: var(--primary);
   position: absolute;
   width: 70%;
   border-radius: 50%;
