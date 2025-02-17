@@ -1,11 +1,10 @@
 import './App.css'
 import Header from './components/header'
-import introEducation from './assets/education.png'
 import Footer from './components/footer'
 import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
 import LoginPage from './pages/loginpage';
 import TestWork from './pages/testwork';
-
+import EducationBoy from './assets/educationboy.png'
 function App() {
 
   return (
@@ -19,17 +18,20 @@ function App() {
                   <div className="main">
                   <section> 
                     <div className="intro">
-                      <div className="empty"></div>
                       <div className="intro-container">
+                          <div className="circle"></div>
                          <div className="intro-text">
                          <h1>Обучение и оценки</h1>
                          <p>
                          Сдайте свой экзамен здесь проще и удобнее</p>
-                         <Link to='TestWork'>Сдать экзамен</Link>
+                         <Link to='TestWork'>
+                         <i class="fa fa-angle-double-right"></i>
+                          <span>Сдать экзамен</span> 
+                         </Link>
                          </div>
-                      <div className="intro-design">
-                        <img src={introEducation}/>
-                      </div>
+                         <div className="intro-design">
+                          <img src={EducationBoy} alt="" />
+                         </div>
                       </div>
                     </div>
                     <div className="about">

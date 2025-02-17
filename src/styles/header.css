@@ -7,7 +7,7 @@ header {
   height: 80px;
   background-color: var(--primary);
   z-index: 5;
-  border-bottom: red 2px solid;
+  border-bottom: var(--red) 2px solid;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
   align-content: center;
   font-family: serif;

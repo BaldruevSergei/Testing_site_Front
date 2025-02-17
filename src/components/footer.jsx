@@ -3,9 +3,9 @@ function Footer() {
      return <footer>
                <hr />
                <ul className='footerInfo'>
-                    <li>Lorem, ipsum dolor.</li>
-                    <li>Lorem, ipsum dolor.</li>
-                    <li>Lorem, ipsum dolor.</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                </ul>
           </footer>
 }
