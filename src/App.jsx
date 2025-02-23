@@ -17,7 +17,7 @@ function App() {
                   <>
                   <Header/>
                   <div className="main">
-                  <section> 
+                   <section> 
                     <div className="intro">
                       <div className="empty"></div>
                       <div className="intro-container">
@@ -34,7 +34,7 @@ function App() {
                     </div>
                     <div className="about">
                     </div>
-                   </section>
+                    </section>
                    </div>
                    <Footer/>
                    </>
