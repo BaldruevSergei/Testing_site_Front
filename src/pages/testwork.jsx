@@ -6,7 +6,7 @@ export default function TestWork(){
             <Header/>
             <div className="testworkPage">
                   <div className="testwork">
-                        <h1>Проверочные работы</h1>
+                        <h1>Проверочные работы, 'name'</h1>
                         <Exams/>
                   </div>
             </div>
@@ -15,35 +15,36 @@ export default function TestWork(){
 }
 
 function Exams() {
-      const currentExams = [];
-      const completedExams = [];
+      const currentExams = [ ]; // Array for the exams 
+      const completedExams = [ ]; // Array for the exams 
     
-      const hasCurrentExams = currentExams.length > 0;
-      const hasCompletedExams = completedExams.length > 0;
+      const hasCurrentExams = currentExams.length > 0;// Boolean
+      const hasCompletedExams = completedExams.length > 0; // Boolean
     
-      const CurrentEmpty = <p className="empty">У тебя сейчас нет работ, которые ты можешь выполнить.</p>;
-      const CompletedEmpty = <p className="empty">У тебя нет работ, которые ты выполнил.</p>;
-    
-      let completedExamsHTML = (
-        <ul className="completedExams">
+      const CurrentEmpty = <p className="empty">У тебя сейчас нет работ, которые ты можешь выполнить.</p>; // if the array is empty
+      const CompletedEmpty = <p className="empty">У тебя нет работ, которые ты выполнил.</p>; // if the array is empty
+
+      let completedExamsHTML = [] // Render the exams to html
+      let completedExamsElements = (
+     <>
           {hasCompletedExams
             ? completedExams.map((student) => (
-                <li key={student.id}>
+                completedExamsHTML.unshift(<li key={student.id}>
                   <span className='date'>{student.date}</span>
                   <span className='subject'>{student.name}</span>
                   <span className='Topic'>{student.topic}</span>
                   <span className='Grade'>{student.grade}</span>
-                </li> 
+                </li> )
               ))
-            : CompletedEmpty}
-        </ul>
+            : completedExamsHTML = CompletedEmpty}
+       </> // logic to put the students info into a list element
       );
-    
-      let currentExamsHTML = (
-        <ul className="currentExams">
-          {hasCurrentExams ? currentExams.map((list) => <li key={list.id}>{list.name}</li>) : CurrentEmpty}
-        </ul>
-      );
+      let currentExamsHTML = [] // Render the exams
+      let currentExamsElements = (
+        <>
+          {hasCurrentExams ? currentExams.map((list) => currentExamsHTML.unshift(<li key={list.id}>{list.name}</li>)) : currentExamsHTML = CurrentEmpty}
+        </>
+      ); // logic to put the students info into a list element
     
       return (
         <>
@@ -54,7 +55,9 @@ function Exams() {
               </span>
               Новые работы
             </h1>
+            <ul className="currentExams">
             {currentExamsHTML}
+            </ul>
           </div>
           <div className="Exams">
             <h1 className="Heading">
@@ -63,7 +66,9 @@ function Exams() {
               </span>
               Завершённые работы
             </h1>
+               <ul className="completedExams">
             {completedExamsHTML}
+            </ul>
           </div>
         </>
       );

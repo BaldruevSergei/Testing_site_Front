@@ -7,7 +7,7 @@ header {
   height: 80px;
   background-color: var(--primary);
   z-index: 5;
-  border-bottom: red 2px solid;
+  border-bottom: var(--red) 2px solid;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
   align-content: center;
   font-family: serif;
@@ -49,6 +49,10 @@ header .links li{
   cursor: pointer;
   position: relative;
   font-size: 1.2rem;
+}
+header .links li a{
+  display: flex;
+  gap: 5px;
 }
 header .links .accountDashboard button{
   width: 80px;
@@ -114,7 +118,7 @@ header .links .accountDashboard {
     border-bottom: var(--red) 2px solid;
 
   }
-  header .responsive-menu li{
+  header .responsive-menu a li{
     cursor: pointer;
     height: 100%;
     display: flex;
@@ -122,6 +126,9 @@ header .links .accountDashboard {
     font-family: serif;
     justify-content: center;
     align-items: center;
+  }
+  header .responsive-menu a{
+    height: 100%;
   }
   header .responsive-menu li:hover{
     background: rgb(221, 218, 218);
@@ -147,7 +154,7 @@ header .links .accountDashboard {
 header .login-menu {
   position: absolute;
   right: 0;
-  top: 52px;
+  top: 51px;
   width: 200px;
   height: 200px;
   background-color: var(--primary);
