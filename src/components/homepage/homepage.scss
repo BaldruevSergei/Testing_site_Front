@@ -1,0 +1,17 @@
+@import '../../App.scss';
+.homepage{
+     @include size(auto,100vw,white,black);
+     @include grid(auto auto auto, 1fr, start,start);
+     grid-template-areas: "header"
+                          "main"
+                          "footer";
+     
+     main{
+          grid-area: main;
+          background-color: $main;
+          height: 80vh;
+     }
+
+}
+
+

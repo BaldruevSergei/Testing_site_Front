@@ -1,0 +1,14 @@
+@import '../../App.scss';
+
+header{
+     grid-area: header;
+     height: 70px;
+     @include grid(1fr, 1fr 1fr, start,start);
+
+     .logo{
+          @include size(100%, 80%, white, black);
+          margin: 0 auto;
+          @include flex(center,start,row);
+          @include font(2rem,Poppins,500);
+     }
+}

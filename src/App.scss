@@ -1,0 +1,30 @@
+$main: #EFF6FF;
+
+@mixin flex($align,$justify,$direction){
+     display: flex;
+     align-items: $align;
+     justify-content: $justify;
+     flex-direction: $direction;
+}
+@mixin grid($rows, $columns, $align, $justify){
+     display: grid;
+     grid-template-rows: $rows;
+     grid-template-columns: $columns;
+     justify-content: $justify;
+     align-items: $align;
+}
+@mixin size($height,$width,$bg-color,$color){
+     height: $height;
+     width: $width;
+     background: $bg-color;
+     color: $color;
+}
+@mixin font($font-size, $font-family, $font-weight){
+     font-size: $font-size;
+     font-family: $font-family;
+     font-weight: $font-weight;
+}
+@mixin border($border, $radius){
+     border: $border;
+     border-radius: $radius;
+}
