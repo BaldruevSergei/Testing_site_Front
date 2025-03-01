@@ -55,7 +55,7 @@ function Container(props) {
       <h1>{capitalizeFirstLetter(props.name)}</h1>
       <form onSubmit={(e) => e.preventDefault()}>
         <span>
-          <i className="fa fa-user-circle-o"></i>
+        <i class='fas fa-user-circle'></i>
           <input type="text" placeholder="Имя пользователя" required value={username} onChange={(e) => setUsername(e.target.value)} />
         </span>
         <span>
