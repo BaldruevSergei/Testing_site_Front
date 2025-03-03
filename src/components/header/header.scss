@@ -3,12 +3,142 @@
 header{
      grid-area: header;
      height: 70px;
-     @include grid(1fr, 1fr 1fr, start,start);
-
+     @include grid(1fr, 20% 1fr, start,start);
+     
      .logo{
           @include size(100%, 80%, white, black);
           margin: 0 auto;
-          @include flex(center,start,row);
-          @include font(2rem,Poppins,500);
+          @include flex(center,end,row, 0);
+          @include font(2rem,sans-serif,600);
+          cursor:default;
+          #menuBtn{
+               display: none;
+          }
+     }
+
+     .links{
+          @include grid(1fr, 90% 1fr, center, end);
+          width: 95%;
+          margin: 0 auto;
+          gap: 15px;
+          height: 100%;
+          position: relative;
+          
+          span{
+               @include flex(center, flex-end, row, 25px);
+               @include font(1.2rem, Poppins, regular);
+               
+               a{
+                    @include flex(center,center, row,5px);
+                    position: relative;
+               }
+               a::after{
+                    content: '';
+                    @include size(2px, 0, black, white);
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    transition: width 0.1s ease-in-out;
+               }
+               a:hover::after{
+                    width: 100%;
+               }
+          }
+
+          button{
+               @include size(30px,90px,$button,white);
+               @include border(none, 10px);
+               @include font(1.1rem, Poppins, 100);
+               cursor: pointer;
+               
+          }
+
+          button:active{
+               transform: scale(1.02);
+          }
+          
+          .responsiveMenu{
+               display: none;
+          }
+          .loginOptions{
+               position: absolute;
+               @include size(0,140px,white,black);
+               right: 0;
+               top: 100%;
+               transition: all 0.3s ease-in-out;
+               overflow: hidden;
+               border-bottom-left-radius: 15px;
+               border-bottom-right-radius: 15px;
+               @include flex(start,start,column,0);
+               
+               a{
+                    height: calc(100% / 2);
+                    width: 100%;
+                    @include flex(center,center,row,5px);
+               }
+               a:hover{
+                    background-color: $hover;
+               }
+
+          }
+     }
+
+}
+
+@media only screen and (max-width: 730px) {
+     header{
+          position: relative;
+          grid-template-columns: 45% 1fr;
+          
+          .logo{
+               gap: 15px;
+               #menuBtn{
+                    display: block;
+                    font-size: 2.5rem;
+                    cursor: pointer;
+                  
+               }
+          }
+
+          .links{
+               @include flex(center,end,row, 15px);
+               position: initial;
+
+               span{
+                    display: none;
+               }
+
+               .responsiveMenu{
+                    @include flex(start,start,column, 0);
+                    @include size(0, 100%, white, black);
+                    position: absolute;
+                    top: 100%;
+                    overflow: hidden;
+                    transition: all 0.2s linear;
+
+                    a{
+                         @include size(calc(100% / 3), 100%,white,black);
+                         @include flex(center, flex-start, row, 5px);
+                         padding: 15px;
+                         @include font(1.2rem, Poppins, regular);
+                    }
+
+                    a:hover{
+                         background-color: $hover;
+                    }
+               }
+          }
+
+     }
+
+}
+@media only screen and (max-width:450px){
+     header{
+          .logo{
+               justify-content: start;
+               p{
+                    display: none;
+               }
+          }
      }
 }

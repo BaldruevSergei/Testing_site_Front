@@ -1,10 +1,17 @@
 $main: #EFF6FF;
-
-@mixin flex($align,$justify,$direction){
+$button: #2563EB;
+$hover: #d4d6d9;
+$black: #0D3049;
+$red: #d62828;
+$orange: #f77f00;
+$yellow: #fcbf49;
+$white: #eae2b7;
+@mixin flex($align,$justify,$direction,$gap){
      display: flex;
      align-items: $align;
      justify-content: $justify;
      flex-direction: $direction;
+     gap: $gap;
 }
 @mixin grid($rows, $columns, $align, $justify){
      display: grid;
