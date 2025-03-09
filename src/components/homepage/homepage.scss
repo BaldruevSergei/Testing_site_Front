@@ -8,11 +8,13 @@
      
      main{
           grid-area: main;
-          height: 120vh;
-          @include size(120vh, 100%, white, black);
+          @include size(200vh, 100%, white, black);
           
           nav{
-               @include size(70vh, 100%, $main, black);
+               @include size(100vh, 100%, url(../../assets//background.jpg), black);
+               background-repeat: no-repeat;
+               background-size: contain;
+               background-size: 100%;
 
           }
           

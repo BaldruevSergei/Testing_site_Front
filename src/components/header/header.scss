@@ -2,14 +2,22 @@
 
 header{
      grid-area: header;
-     height: 70px;
-     @include grid(1fr, 20% 1fr, start,start);
+     @include grid(1fr, 25% 1fr, start,start);
+     width: 80%;
+     @include size(60px,80%,$white,black);
+     border: 1px solid black;
+     top: 10px;
+     right: 0;
+     left: 0;
+     margin: 0 auto;
+     position: fixed;
+     border-radius: 120px;
      
      .logo{
-          @include size(100%, 80%, white, black);
+          @include size(100%, 80%, "", black);
           margin: 0 auto;
-          @include flex(center,end,row, 0);
-          @include font(2rem,sans-serif,600);
+          @include flex(center,start,row, 0);
+          @include font(1.8rem,sans-serif,600);
           cursor:default;
           #menuBtn{
                display: none;
@@ -62,9 +70,9 @@ header{
           }
           .loginOptions{
                position: absolute;
-               @include size(0,140px,white,black);
+               @include size(0,120px,white,black);
                right: 0;
-               top: 100%;
+               top: 95%;
                transition: all 0.3s ease-in-out;
                overflow: hidden;
                border-bottom-left-radius: 15px;
@@ -84,14 +92,26 @@ header{
      }
 
 }
-
+@media only screen and (max-width: 950px){
+     header{
+          grid-template-columns: 1px 1fr;
+          .logo{
+               p{
+               display: none;
+               }
+          }
+    
+     }
+}
 @media only screen and (max-width: 730px) {
      header{
+          border-radius: initial;
           position: relative;
-          grid-template-columns: 45% 1fr;
-          
+          grid-template-columns: 70% 1fr;
+          width: 100%;
           .logo{
                gap: 15px;
+               
                #menuBtn{
                     display: block;
                     font-size: 2.5rem;
