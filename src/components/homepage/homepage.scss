@@ -1,0 +1,23 @@
+@import '../../App.scss';
+.homepage{
+     @include size(auto,100%,white,black);
+     @include grid(auto auto auto, 1fr, start,start);
+     grid-template-areas: "header"
+                          "main"
+                          "footer";
+     
+     main{
+          grid-area: main;
+          @include size(200vh, 100%, white, black);
+          
+          nav{
+               @include size(100vh, 100%, url(../../assets//background.jpg), black);
+               background-repeat: no-repeat;
+               background-size: contain;
+               background-size: 100%;
+
+          }
+          
+     }
+
+}
