@@ -2,6 +2,7 @@
 .homepage{
      @include size(auto,100%,white,black);
      @include grid(auto auto auto, 1fr, start,start);
+     animation: opacity 1s ease-in-out;
      overflow-x: hidden;
      grid-template-areas: "header"
                           "main"
@@ -9,10 +10,10 @@
      
      main{
           grid-area: main;
-          @include size(1500px, 100%, white, black);
+          @include size(auto, 100%, white, black);
           
           nav{
-               @include size(800px, 100%, white, black);
+               @include size(100vh, 100%, white, black);
                background-repeat: no-repeat;
                background-size: cover;
                @include flex(center,center,column,0);
@@ -21,7 +22,7 @@
                     height: 60%;
                     text-align: center;
                     
-                    div{
+                    .banner{
                          @include size(auto,350px,#dce4ee,$button);
                          font-size: 1.3rem;
                          margin: 0 auto;
@@ -70,14 +71,39 @@
                                    background-color: #f1f1f1;
                               }
                          }
-
                     }
+
+                    .contributors{
+                         width: 100%;
+                         height: 100px;
+                         @include flex(center,center,row,15px);
+                         img{
+                              
+                               filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+                         }
+                         i{
+                              font-size: 3rem;
+                              color: rgb(182, 178, 178);
+                         }
+                    }
+
                }
 
           }
-          
-     }
 
+          .features{
+               @include size(80vh, 100%, #f0eeee, black);
+               
+          }          
+     }
+}
+@keyframes opacity {
+     0% {
+          opacity: 0;
+     }
+     100% {
+          opacity: 1;
+     }
 }
 
 @media only screen and (max-width:513px){
@@ -88,7 +114,7 @@
              
                div{
                     text-wrap: balance;
-                    div{
+                    .banner{
                          width: 260px;
                          font-size: 1rem;
                     }
