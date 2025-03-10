@@ -71,7 +71,7 @@ header{
           }
           .loginOptions{
                position: absolute;
-               @include size(0,120px,white,black);
+               @include size(0,120px,$white,black);
                right: 0;
                top: 95%;
                transition: all 0.3s ease-in-out;

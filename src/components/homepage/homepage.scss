@@ -117,7 +117,12 @@
                               }
                               span{
                                    font-size: 2rem;
-                                   font-family: sans-serif  ;
+                                   font-family: sans-serif ;
+                                   p{
+                                        font-size: 1rem;
+                                        font-family: serif;
+                                        width: 50%;
+                                   }
                               }
                          }
                     }
@@ -129,8 +134,8 @@
                          img{
                               width: auto;
                               height: 100%;
-                              border: 1px solid;
                               min-width: 700px;
+                              border: 1px solid;
                          }
                     }
                }
@@ -145,7 +150,17 @@
           opacity: 1;
      }
 }
-
+@media only screen and (max-width:1440px){
+     .homepage{
+          main{
+               .features{
+                    div{
+                         width: 95%;
+                    }
+               }
+          }
+     }
+}
 @media only screen and (max-width:513px){
      .homepage{
           main{

@@ -20,7 +20,7 @@ function Main(){
           const interval = setInterval(() => {
                setProgress(prevProgress => {
                     if (prevProgress === 100) {
-                         setIndex(prevIndex => (prevIndex + 1) % 5);
+                         setIndex(prevIndex => (prevIndex + 1) % info.length);
                          return 0;
                     }
                     return prevProgress + 1;
@@ -43,7 +43,7 @@ function Main(){
           },
           {
                title: 'Тестирование',
-               description: 'Платформа позволяет проводить тестирование для учеников и учителей.',
+               description: 'Платформа позволяет проводить тестирование для учеников.',
                icon: 'fas fa-vials',
                image: '',
           },
@@ -53,12 +53,6 @@ function Main(){
                icon: 'fas fa-chart-line',
                image: '',
           },
-          {
-               title: 'Подготовка',
-               description: 'Готовьтесь к экзаменам с помощью наших учебных материалов и тестов.',
-               icon: 'fas fa-book-open',
-               image: '',
-          }
      ]
 
      return <>
@@ -86,7 +80,10 @@ function Main(){
                          <div className='progressBar' style={{ height: currentIndex === index ? 100 : 30 }}>
                          <div className='progress' style={{ height: currentIndex === index ? progress : 0 }}></div>
                          </div>
-                          <span>{item.title}</span>
+                          <span>{item.title}
+                          <p style={{display: currentIndex === index ? "block" : "none"}}>{item.description}</p>
+                          </span>
+                         
                       </li> 
                     ))}
                </ul>

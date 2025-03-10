@@ -19,12 +19,15 @@ export default function Header(){
                     <Links/>
                </span>
                <button onClick={() => {setLogin(!loginMenu); setMenu(false)}}>Зайти</button>
-               <div className='loginOptions' style={{height: loginMenu ? "100px" : '0',}}>
-                    <Link>
+               <div className='loginOptions' style={{height: loginMenu ? "150px" : '0',}}>
+                    <Link to='/Auth/Student'>
                     <i className='fas fa-user-graduate'></i>Студент</Link>
-                    <Link>
-                    <i class='fas fa-chalkboard-teacher'></i>
+                    <Link to='/Auth/Teacher'>
+                    <i className='fas fa-chalkboard-teacher'></i>
                     Учитель</Link>
+                    <Link to='/Auth/Admin'>
+                    <i className="fa fa-shield"></i>
+                    Админ</Link>
                </div>
 
                <div className="responsiveMenu" style={{height: menu ? "200px" : "0", visibility: menu ? "visible" : "hidden"}}>
