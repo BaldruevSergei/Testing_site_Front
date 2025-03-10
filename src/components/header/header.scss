@@ -2,10 +2,11 @@
 
 header{
      grid-area: header;
+     z-index: 999;
      @include grid(1fr, 25% 1fr, start,start);
      width: 80%;
      @include size(60px,80%,$white,black);
-     border: 1px solid black;
+     box-shadow: 0 5px 10px #00000014, 0 5px 4px #0000001f;
      top: 10px;
      right: 0;
      left: 0;
@@ -76,6 +77,7 @@ header{
                transition: all 0.3s ease-in-out;
                overflow: hidden;
                border-bottom-left-radius: 15px;
+               box-shadow:  0 5px 5px #00000014, 0 1px 4px #0000001f;
                border-bottom-right-radius: 15px;
                @include flex(start,start,column,0);
                
@@ -105,8 +107,11 @@ header{
 }
 @media only screen and (max-width: 730px) {
      header{
+          top: 0;
+          border:none;
+          border-bottom: 1px solid black;
           border-radius: initial;
-          position: relative;
+          position: fixed;
           grid-template-columns: 70% 1fr;
           width: 100%;
           .logo{
@@ -135,6 +140,7 @@ header{
                     top: 100%;
                     overflow: hidden;
                     transition: all 0.2s linear;
+                    border-bottom: 1px solid black;
 
                     a{
                          @include size(calc(100% / 3), 100%,white,black);
@@ -154,6 +160,7 @@ header{
 }
 @media only screen and (max-width:450px){
      header{
+          
           .logo{
                justify-content: start;
                p{
