@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom"
+import { useParams , Link} from "react-router-dom"
 import StudentLogin from "./student/studentlogin";
 import TeacherLogin from "./teacher/teacherlogin";
 import AdminLogin from "./admin/adminlogin";
@@ -18,6 +18,7 @@ export default function AuthPage() {
        <>
             {FormComponent ? 
             <div className="AuthPage">
+             <Link to='/'><i className='fas fa-graduation-cap'></i></Link>
              <FormComponent /> 
             </div>
             : <ErrorPage/>}

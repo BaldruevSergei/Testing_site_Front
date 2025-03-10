@@ -2,4 +2,13 @@
 .AuthPage{
  @include flex(center,center,row,0);
  @include size(100vh,100vw,$black,$white);
+ a{
+     position: absolute;
+     left: 0;
+     top:0;
+     padding: 20px;
+     color: white;
+     font-size: 3rem;
+     cursor: pointer;
+ }
 }
