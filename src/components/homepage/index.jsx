@@ -3,6 +3,8 @@ import Header from '../header';
 import Footer from '../footer';
 import { Link } from 'react-router-dom';
 import Oros3Logo from '../../assets/oros3.svg';
+import { useEffect, useState } from 'react';
+
 export default function Homepage(){
      return <div className='homepage' >
           <Header/>
@@ -12,6 +14,53 @@ export default function Homepage(){
 }
 
 function Main(){
+     const [currentIndex, setIndex] = useState(0);
+     const [progress, setProgress] = useState(0);
+     useEffect(() => {
+          const interval = setInterval(() => {
+               setProgress(prevProgress => {
+                    if (prevProgress === 100) {
+                         setIndex(prevIndex => (prevIndex + 1) % 5);
+                         return 0;
+                    }
+                    return prevProgress + 1;
+               });
+          }, 50);
+          return () => clearInterval(interval);
+     }, []);
+     const info = [
+          {
+               title: 'Учитель',
+               description: 'Учитель может создавать тесты, просматривать результаты и управлять учениками.',
+               icon: 'fas fa-chalkboard-teacher',
+               image: '',
+          },
+          {
+               title: 'Ученик',
+               description: 'Ученик может проходить тесты, проверять результаты и улучшать свои знания.',
+               icon: 'fas fa-user-graduate',
+               image: '',
+          },
+          {
+               title: 'Тестирование',
+               description: 'Платформа позволяет проводить тестирование для учеников и учителей.',
+               icon: 'fas fa-vials',
+               image: '',
+          },
+          {
+               title: 'Результаты',
+               description: 'Просматривайте результаты тестов и анализируйте их для улучшения знаний.',
+               icon: 'fas fa-chart-line',
+               image: '',
+          },
+          {
+               title: 'Подготовка',
+               description: 'Готовьтесь к экзаменам с помощью наших учебных материалов и тестов.',
+               icon: 'fas fa-book-open',
+               image: '',
+          }
+     ]
+
      return <>
      <main>
           <nav>
@@ -31,7 +80,19 @@ function Main(){
           </nav>
           <section className='features'>
                <div>
-                    
+               <ul>
+                    {info.map((item, index) => (
+                     <li>
+                         <div className='progressBar' style={{ height: currentIndex === index ? 100 : 30 }}>
+                         <div className='progress' style={{ height: currentIndex === index ? progress : 0 }}></div>
+                         </div>
+                          <span>{item.title}</span>
+                      </li> 
+                    ))}
+               </ul>
+                    <div className='info'>
+                         <img src={info[currentIndex].image} alt="Image"/>
+                    </div>
                </div>
           </section>
      </main>

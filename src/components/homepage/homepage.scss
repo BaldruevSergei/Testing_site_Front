@@ -93,7 +93,47 @@
 
           .features{
                @include size(80vh, 100%, #f0eeee, black);
-               
+               @include flex(center,center,row,0);
+               div{
+                    height: auto;
+                    width: 60%;
+                    min-width: 50%;
+                    min-height: 50%;
+                    @include grid(1fr, 1fr 1fr, start, start);
+                    ul{
+                         list-style: none;
+                         @include flex(start,start,column,20px);
+                         li{
+                              @include flex(center,start,row,50px);
+                              .progressBar{
+                                   @include size(50,3px,#b6d8ff,black);
+                                   border-radius: 15px;
+                                   min-width: initial;
+                                   .progress{
+                                        @include size(0,3px,#1a53cf,black);
+                                        min-height: 0;
+                                        
+                                   }
+                              }
+                              span{
+                                   font-size: 2rem;
+                                   font-family: sans-serif  ;
+                              }
+                         }
+                    }
+                    div{
+                         @include size(100%,90%,initial,black);
+                         @include flex(center,start,column,0);
+                         text-align: center;
+                         font-size: 1.4rem;
+                         img{
+                              width: auto;
+                              height: 100%;
+                              border: 1px solid;
+                              min-width: 700px;
+                         }
+                    }
+               }
           }          
      }
 }
