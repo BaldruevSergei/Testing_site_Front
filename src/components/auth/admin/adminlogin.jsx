@@ -13,7 +13,7 @@ export default function AdminLogin() {
         <input type="text" placeholder='Имя' required/></span>
         <span>
         <i className='fas fa-lock'></i>
-            <input type={!visible ? "text" : "password"} placeholder='Пароль' required/><i className={`fa fa-eye${!visible ? "-slash" : ''}`} id='eye' onClick={() => setVisible(!visible)}></i></span>
+            <input type={visible ? "text" : "password"} placeholder='Пароль' required/><i className={`fa fa-eye${visible ? "-slash" : ''}`} id='eye' onClick={() => setVisible(!visible)}></i></span>
         </div>
         <button>Зайти</button>
     </form>
