@@ -1,0 +1,55 @@
+@import '../../mixins.scss';
+
+.AdminAuth{
+     @include size(400px,30%,$white,black);
+     min-width: 280px;
+     text-align: center;
+     border-radius: 15px;
+     padding: 20px;
+     @include flex(center,start,column,15px);
+     h1{
+      font-family: sans-serif;
+     }
+     p{
+      font-size: 1.2rem;
+     }
+     .inputs{
+          @include flex(start,start,column,30px);
+          width: 90%;
+          span{
+             @include size(50px,100%,$white,gray);  
+             @include flex(center,start,row,0);
+             box-shadow: 0px 3px 0px gray;
+             input{
+               border: none;
+               width: 90%;
+               height: 100%;
+               background-color: $white;
+               outline: none;
+               font-size: 1.3rem;
+             }
+             &:focus-within{
+               box-shadow: 0px 3px 0px $button;
+               color: $button;
+               
+             }
+             i{
+               min-width: 10%;
+               font-size: 1.3rem;
+             }
+             #eye{
+               cursor: pointer;
+             }
+          }  
+     }
+     button{
+      @include size(50px,90%,$button,white);
+      cursor: pointer;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 10px;
+     }
+     button:hover{
+      background-color: #0845c9;
+     }
+}

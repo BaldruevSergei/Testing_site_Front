@@ -14,7 +14,7 @@ function App() {
             <Homepage/>
             }></Route>
           <Route path='/Auth/:id' element={<AuthPage/>}></Route>
-          <Route path='/:url' element={<ErrorPage/>}></Route>
+          <Route path='*' element={<ErrorPage/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

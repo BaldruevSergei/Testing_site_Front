@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom"
-import StudentLogin from "./studentlogin";
-import TeacherLogin from "./teacherlogin";
-import AdminLogin from "./adminlogin";
+import StudentLogin from "./student/studentlogin";
+import TeacherLogin from "./teacher/teacherlogin";
+import AdminLogin from "./admin/adminlogin";
 import ErrorPage from "../errorpage";
+import './authpage.scss'
 export default function AuthPage() {
     const { id } = useParams();
     const formComponents = {

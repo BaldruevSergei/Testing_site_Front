@@ -76,7 +76,7 @@ function Main(){
                <div>
                <ul>
                     {info.map((item, index) => (
-                     <li>
+                     <li onClick={() => {setIndex(index), setProgress(0)}}>
                          <div className='progressBar' style={{ height: currentIndex === index ? 100 : 30 }}>
                          <div className='progress' style={{ height: currentIndex === index ? progress : 0 }}></div>
                          </div>
