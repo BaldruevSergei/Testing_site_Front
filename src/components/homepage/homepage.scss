@@ -94,7 +94,7 @@
           }
 
           .features{
-               @include size(80vh, 100%, #f0eeee, black);
+               @include size(100vh, 100%, #f0eeee, black);
                @include flex(center,center,row,0);
                div{
                     height: auto;
