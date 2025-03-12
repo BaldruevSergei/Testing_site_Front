@@ -2,7 +2,7 @@
 .AuthPage{
  @include flex(center,center,row,0);
  @include size(100vh,100vw,$black,$white);
- a{
+ .home{
      position: absolute;
      left: 0;
      top:0;
@@ -12,3 +12,10 @@
      cursor: pointer;
  }
 }
+@media only screen and (max-width:470px){
+ .AuthPage{
+    .home{
+        display: none;
+    }
+    }
+}   

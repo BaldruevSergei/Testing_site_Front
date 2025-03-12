@@ -5,9 +5,9 @@ export default function Links(){
      <i className="fa fa-home"></i>
      Начало
      </Link>
-     <Link to='/'>
+     <Link to='/TestLibrary'>
      <i className="fa fa-book"></i>
-     Проверочные работы
+     Рабочая панель
      </Link>
      <Link to='/'>
      <i className="fa fa-phone"></i>

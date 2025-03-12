@@ -4,6 +4,7 @@ import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AuthPage from './components/auth/authpage';
 import ErrorPage from './components/errorpage';
+import TestLibrary from './components/testlibrarypage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             }></Route>
           <Route path='/Auth/:id' element={<AuthPage/>}></Route>
           <Route path='*' element={<ErrorPage/>}></Route>
+          <Route path='/TestLibrary' element={<TestLibrary/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
