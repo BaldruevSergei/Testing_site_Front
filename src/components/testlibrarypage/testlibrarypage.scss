@@ -67,8 +67,20 @@ $mainMinHeight: 800px;
                 }
             
                 div{
-                    .tests{
-
+                    .odd{
+                        background-color: #dfe8f3;
+                    }
+                    .test{
+                        @include grid(initial,20% 20% 1fr 10%,center,start);
+                        span{
+                            height: 50px;
+                            @include flex(center,start,row,0);
+                            padding-left: 15px;
+                            font-size: 1.2rem;
+                        }
+                    }
+                    .test:hover, .odd:hover{
+                        background-color: $hover;
                     }
                 }
             }
