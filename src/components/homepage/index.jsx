@@ -64,7 +64,7 @@ function Main(){
                <p>Онлайн-платформа для школьников, позволяющая проходить тесты, улучшать знания, проверять результаты и готовиться к экзаменам легко и удобно.</p>
                     <form onSubmit={(e) => e.preventDefault()}>
                     <Link>Начало</Link>
-                    <Link>Рабочая панель</Link>
+                    <Link to='/TestLibrary'>Рабочая панель</Link>
                     </form>
                     <div className='contributors'>
                     <img src={Oros3Logo} alt='telegram' width='80' height='80' />
