@@ -30,8 +30,8 @@ export default function StudentSignUp(){
             setWarning('Пароль должен содержать минимум 6 символов');
             return;
         }
-        if(name.length < 6){
-            setWarning('Имя должно содержать минимум 6 символов');
+        if(name.length < 2){
+            setWarning('Имя должно содержать минимум 2 символов');
             return;
         }
         if(password !== confirmPassword && school !== '' && grade !== '' && name !== ''){ 
