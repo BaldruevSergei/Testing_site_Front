@@ -16,7 +16,7 @@ export default function StudentLogin(){
         <i className='fas fa-lock'></i>
             <input type={visible ? "text" : "password"} placeholder='Пароль' required/><i className={`fa fa-eye${visible ? "-slash" : ''}`} id='eye' onClick={() => setVisible(!visible)}></i></span>
         </div>
-        <button>Зайти</button>
+        <button>Войти</button>
         <span className="Warning"></span>
         <span className='checkbox'><span><input type='checkbox' id='remember'/><label for="remember">Запомнить меня</label></span> <Link>Забыли пароль?</Link></span>
         <span className='noAccount'>Нет аккаунта? <Link to='/Auth/StudentSignUp'>Регистрация</Link></span>
