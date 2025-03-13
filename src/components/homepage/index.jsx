@@ -64,7 +64,6 @@ function Main(){
                <h1>Платформа для тестов и обучения</h1>
                <p>Онлайн-платформа для школьников, позволяющая проходить тесты, улучшать знания, проверять результаты и готовиться к экзаменам легко и удобно.</p>
                     <form onSubmit={(e) => e.preventDefault()}>
-                    <Link>Начало</Link>
                     <Link to='/TestLibrary'>Рабочая панель</Link>
                     </form>
                     <div className='contributors'>

@@ -58,19 +58,10 @@
                               box-shadow: 0 0 5px #00000014, 0 1px 4px #0000001f;
                               border-radius: 15px;
                               min-width: 140px;
-                              &:nth-of-type(1) {
-                                   background-color: $button;
-                                   color: white;
-                               }
+                              background-color: $button;
+                              color: white;
                               &:nth-of-type(1):hover {
                                    background-color: #1a53cf;
-                              }
-                              &:nth-of-type(2) {
-                                   background-color: white;
-                                   color: $button;
-                              }
-                              &:nth-of-type(2):hover {
-                                   background-color: #f1f1f1;
                               }
                          }
                     }
