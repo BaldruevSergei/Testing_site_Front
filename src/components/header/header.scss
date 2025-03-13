@@ -112,7 +112,7 @@ header{
           border-bottom: 1px solid black;
           border-radius: initial;
           position: fixed;
-          grid-template-columns: 70% 1fr;
+          grid-template-columns: 60% 1fr;
           width: 100%;
           .logo{
                gap: 15px;
@@ -128,7 +128,7 @@ header{
           .links{
                @include flex(center,end,row, 15px);
                position: initial;
-
+               width: 100%;
                span{
                     display: none;
                }
@@ -138,6 +138,7 @@ header{
                     @include size(0, 100%, white, black);
                     position: absolute;
                     top: 100%;
+                    width: 100%;
                     overflow: hidden;
                     transition: all 0.2s linear;
                     border-bottom: 1px solid black;

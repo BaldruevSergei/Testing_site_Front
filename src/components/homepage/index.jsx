@@ -4,6 +4,7 @@ import Footer from '../footer';
 import { Link } from 'react-router-dom';
 import Oros3Logo from '../../assets/oros3.svg';
 import { useEffect, useState } from 'react';
+import TestWork from '../../assets/testworkpage.png'
 
 export default function Homepage(){
      return <div className='homepage' >
@@ -63,7 +64,6 @@ function Main(){
                <h1>Платформа для тестов и обучения</h1>
                <p>Онлайн-платформа для школьников, позволяющая проходить тесты, улучшать знания, проверять результаты и готовиться к экзаменам легко и удобно.</p>
                     <form onSubmit={(e) => e.preventDefault()}>
-                    <Link>Начало</Link>
                     <Link to='/TestLibrary'>Рабочая панель</Link>
                     </form>
                     <div className='contributors'>
