@@ -10,13 +10,171 @@ export default function TestLibrary(){
     const [tests, setTests] = useState([]);
     const [lastItem, setItem] = useState(12);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    
     const newTests = [
-
+        
     ];
     // THE MOST RECENT TESTS COME FIRST SO THAT MEANS THAT THE FIRST TEST IS INDEX 0
     // THESE TESTS ARE JUST DUMMIES 
+    // USE SHIFT TO ADD NEW TESTS NOT PUSH
     const previousTests = [
-  
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+        {
+            'date': '12.12.2021',
+            'subject': 'Математика',
+            'topic': 'Подготовка к ЕГЭ',
+            'result': '100%'
+        },
+
     ];
     useEffect(() => {
         changeTab(0);
@@ -53,7 +211,7 @@ export default function TestLibrary(){
                     <div>{innerWidth < 730 ? 'Дата окончания: ' : ''}<p>{test.date}</p></div>
                     <div>{innerWidth < 730 ? 'Предмет: ' : ''}<p>{test.subject}</p></div>
                     <div>{innerWidth < 730 ? 'Тема: ' : ''}<p>{test.topic}</p></div>
-                    <div>{innerWidth < 730 ? 'Результат: ' : ''}<p>{test.result}</p></div>
+                    {activeTab === 1 && <div>{innerWidth < 730 ? 'Результат: ' : ''}<p>{test.result}</p></div>}
                     </Link> 
                 ))}
             </div>
