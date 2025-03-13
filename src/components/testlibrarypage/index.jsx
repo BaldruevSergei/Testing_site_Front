@@ -19,163 +19,108 @@ export default function TestLibrary(){
     // USE SHIFT TO ADD NEW TESTS NOT PUSH
     const previousTests = [
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '01.01.2022',
+            'subject': 'Физика',
+            'topic': 'Квантовая механика',
+            'result': '95%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '02.01.2022',
+            'subject': 'Химия',
+            'topic': 'Органическая химия',
+            'result': '88%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '03.01.2022',
+            'subject': 'Биология',
+            'topic': 'Генетика',
+            'result': '92%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '04.01.2022',
+            'subject': 'История',
+            'topic': 'Древний Рим',
+            'result': '85%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '05.01.2022',
+            'subject': 'География',
+            'topic': 'Климатические зоны',
+            'result': '90%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '06.01.2022',
+            'subject': 'Литература',
+            'topic': 'Русская классика',
+            'result': '87%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '07.01.2022',
+            'subject': 'Английский язык',
+            'topic': 'Грамматика',
+            'result': '93%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '08.01.2022',
+            'subject': 'Информатика',
+            'topic': 'Алгоритмы',
+            'result': '96%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '09.01.2022',
+            'subject': 'Физкультура',
+            'topic': 'Здоровый образ жизни',
+            'result': '89%'
         },
         {
-            'date': '12.12.2021',
+            'date': '10.01.2022',
             'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'topic': 'Дифференциальные уравнения',
+            'result': '94%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '11.01.2022',
+            'subject': 'Экономика',
+            'topic': 'Микроэкономика',
+            'result': '91%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '12.01.2022',
+            'subject': 'Социология',
+            'topic': 'Социальные структуры',
+            'result': '86%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '13.01.2022',
+            'subject': 'Философия',
+            'topic': 'Экзистенциализм',
+            'result': '88%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '14.01.2022',
+            'subject': 'Психология',
+            'topic': 'Когнитивная психология',
+            'result': '92%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '15.01.2022',
+            'subject': 'Музыка',
+            'topic': 'Классическая музыка',
+            'result': '90%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '16.01.2022',
+            'subject': 'Искусство',
+            'topic': 'Ренессанс',
+            'result': '87%'
         },
         {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
+            'date': '17.01.2022',
+            'subject': 'Право',
+            'topic': 'Конституционное право',
+            'result': '93%'
         },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-        {
-            'date': '12.12.2021',
-            'subject': 'Математика',
-            'topic': 'Подготовка к ЕГЭ',
-            'result': '100%'
-        },
-
-    ];
+    ].reverse();
     useEffect(() => {
         changeTab(0);
         const handleResize = () => setWindowWidth(window.innerWidth);
@@ -216,7 +161,7 @@ export default function TestLibrary(){
                 ))}
             </div>
             <div className='loadmore' style={{display: tests.length < lastItem || tests.length - lastItem === 0? 'none' : 'flex'}}>
-            <button onClick={() => setItem(prevItem => prevItem + tests.length - lastItem)}>{`Загрузить еще ${tests.length - lastItem} ${tests.length - lastItem === 1 ? 'тест' : 'тестов'}`}</button>
+            <button onClick={() => setItem(prevItem => prevItem + (tests.length - lastItem < 8 ? tests.length - lastItem : 8))}>{`Загрузить еще ${tests.length - lastItem < 8 ? tests.length - lastItem : 8} ${tests.length - lastItem === 1 ? 'тест' : 'тестов'}`}</button>
             </div>
         </div>
      </div>
