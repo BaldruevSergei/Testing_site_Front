@@ -4,6 +4,7 @@ import Footer from '../footer';
 import { Link } from 'react-router-dom';
 import Oros3Logo from '../../assets/oros3.svg';
 import { useEffect, useState } from 'react';
+import TestWork from '../../assets/testworkpage.png'
 
 export default function Homepage(){
      return <div className='homepage' >
@@ -51,7 +52,7 @@ function Main(){
                title: 'Результаты',
                description: 'Просматривайте результаты тестов и анализируйте их для улучшения знаний.',
                icon: 'fas fa-chart-line',
-               image: '',
+               image: TestWork,
           },
      ]
 
