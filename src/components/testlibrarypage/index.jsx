@@ -14,6 +14,7 @@ export default function TestLibrary(){
 
     ];
     // THE MOST RECENT TESTS COME FIRST SO THAT MEANS THAT THE FIRST TEST IS INDEX 0
+    // THESE TESTS ARE JUST DUMMIES 
     const previousTests = [
         {
             date: '26.02.2024',
