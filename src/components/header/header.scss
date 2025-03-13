@@ -128,7 +128,7 @@ header{
           .links{
                @include flex(center,end,row, 15px);
                position: initial;
-               width: 80%;
+               width: 100%;
                span{
                     display: none;
                }
@@ -138,6 +138,7 @@ header{
                     @include size(0, 100%, white, black);
                     position: absolute;
                     top: 100%;
+                    width: 100%;
                     overflow: hidden;
                     transition: all 0.2s linear;
                     border-bottom: 1px solid black;
