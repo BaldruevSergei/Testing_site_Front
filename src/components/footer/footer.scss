@@ -1,0 +1,32 @@
+@import '../mixins.scss';
+
+footer{
+  grid-area: footer;  
+  @include size(200px, 100%, $black, white);
+  padding: 40px;
+  @include flex (start,center,column,0);
+
+  a{
+    color: white;
+    height: calc(100% / 3);
+    padding: 5px;
+    font-size: 1.5rem;
+    @include flex(start,start,row,0);
+    min-width: 20%;
+  }
+
+  a .fa{
+    display: none;
+  }
+
+  a:hover{
+    border: 1px solid white;
+  }
+
+}
+
+@media only screen and (max-width: 326px){
+  footer{
+    padding: 0;
+  }
+}

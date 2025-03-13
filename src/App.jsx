@@ -1,46 +1,25 @@
-import './App.css'
-import Header from './components/header'
-import introEducation from './assets/education.png'
-import Footer from './components/footer'
-import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
-import LoginPage from './pages/loginpage';
-function App() {
+import { useState } from 'react';
+import Homepage from './components/homepage'
+import './App.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AuthPage from './components/auth/authpage';
+import ErrorPage from './components/errorpage';
+import TestLibrary from './components/testlibrarypage';
 
+function App() {
   return (
     <>
-    <BrowserRouter>
-      <div className="body">
-          <Header/>
-              <Routes>
-                <Route path='/' element={
-                  <div className="main">
-                  <section> 
-                    <div className="intro">
-                      <div className="empty"></div>
-                      <div className="intro-container">
-                         <div className="intro-text">
-                         <h1>Обучение и оценки</h1>
-                         <p>
-                         Сдайте свой экзамен здесь проще и удобнее</p>
-                         <button>Сдать экзамен</button>
-                         </div>
-                      <div className="intro-design">
-                        <img src={introEducation}/>
-                      </div>
-                      </div>
-                    </div>
-                    <div className="about">
-                    </div>
-                   </section>
-                   </div>
-                }/>
-                   <Route path='/LoginPage' element={<LoginPage/>}></Route>
-                  </Routes>
-            <Footer/>
-      </div>
+      <BrowserRouter>
+         <Routes>
+          <Route path='/' element={
+            <Homepage/>
+            }></Route>
+          <Route path='/Auth/:id' element={<AuthPage/>}></Route>
+          <Route path='*' element={<ErrorPage/>}></Route>
+          <Route path='/TestLibrary' element={<TestLibrary/>}></Route>
+        </Routes>
       </BrowserRouter>
     </>
   )
 }
-
-export default App
+export default App;
