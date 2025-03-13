@@ -52,7 +52,7 @@ function Main(){
                title: 'Результаты',
                description: 'Просматривайте результаты тестов и анализируйте их для улучшения знаний.',
                icon: 'fas fa-chart-line',
-               image: TestWork,
+               image: '',
           },
      ]
 
