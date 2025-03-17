@@ -1,0 +1,32 @@
+@use '../mixins.scss' as *;
+
+.testrun{
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    @include grid(1fr, 1fr 250px, start, start);
+    position: relative;
+    
+    main{
+        min-height: 100vh;
+        overflow-x: hidden;
+        @include size(auto,auto,$hover,black);
+        grid-column: span 1;
+        @include flex(center,center,column,0);
+        h1{
+            width: 90%;
+        }
+        .topic{
+            font-size: 1.5rem;
+            margin: 0 auto;
+            width: 90%;
+            a{
+                color: $button;
+            }
+        }
+        .container{
+            @include size($mainMinHeight,90%,white,black);
+
+        }
+    }
+}

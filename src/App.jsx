@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AuthPage from './components/auth/authpage';
 import ErrorPage from './components/errorpage';
 import TestLibrary from './components/testlibrarypage';
-
+import TestRun from './components/testrunpage/testrun';
+import TestPreview from './components/testpreview';
 function App() {
   return (
     <>
@@ -17,6 +18,8 @@ function App() {
           <Route path='/Auth/:id' element={<AuthPage/>}></Route>
           <Route path='*' element={<ErrorPage/>}></Route>
           <Route path='/TestLibrary' element={<TestLibrary/>}></Route>
+          <Route path='TestLibrary/TestRun/:id' element={<TestRun/>}></Route>
+          <Route path='TestLibrary/TestPreview/:id' element={<TestPreview/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

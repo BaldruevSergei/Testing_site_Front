@@ -1,4 +1,4 @@
-@import '../mixins.scss';
+@use '../mixins.scss' as *;
 
 footer{
   grid-area: footer;  
@@ -13,6 +13,7 @@ footer{
     font-size: 1.5rem;
     @include flex(start,start,row,0);
     min-width: 20%;
+    border: 1px solid $black;
   }
 
   a .fa{
@@ -21,6 +22,10 @@ footer{
 
   a:hover{
     border: 1px solid white;
+  }
+  span{
+    text-align: center;
+    width: 100%;
   }
 
 }

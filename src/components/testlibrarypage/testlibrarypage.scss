@@ -1,5 +1,5 @@
-@import '../mixins.scss';
-$mainMinHeight: 800px;
+@use '../mixins.scss' as *;
+
 .testlibrary{
     background-color: $hover;
     min-height: 100vh;
@@ -10,17 +10,17 @@ $mainMinHeight: 800px;
     overflow-x: hidden;
     @include grid(80px auto, initial, start, start);
     main{
+        padding: 25px;
         grid-row: 2;
         @include flex(center,center,row,0);
         @include size(auto,100vw,'',black);
         min-height: $mainMinHeight;
         
         .container{
-          
             min-height: calc($mainMinHeight * 0.9);
             @include size(auto,90%,'',black);
             .tabs{
-                height: calc($mainMinHeight * 0.05);
+                height: calc($mainMinHeight * 0.05 + 5px);
                 @include flex(center,start,row,10px);
                 padding-left: 5px;
                 button{
@@ -33,7 +33,7 @@ $mainMinHeight: 800px;
                     font-size: 1.2rem;
                 }
                 button:hover{
-                    background-color: #0c44bd;
+                    background-color: $buttonhover;
                 }
                 .active{
                     background-color: white;
@@ -135,6 +135,24 @@ $mainMinHeight: 800px;
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:450px){
+    .testlibrary{
+        main{
+            padding: 0;
+            .container{
+                width: 100%;
+                .tabs{
+                    button{
+                        min-height: 70%;
+                        height: auto;
+                        max-height: 90%;
+                        font-size: 1rem;
                     }
                 }
             }

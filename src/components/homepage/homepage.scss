@@ -1,8 +1,7 @@
-@import '../mixins.scss';
+@use '../mixins' as *;
 .homepage{
      @include size(auto,100%,white,black);
      @include grid(auto auto auto, 1fr, start,start);
-     animation: opacity 1s ease-in-out;
      overflow-x: hidden;
      grid-template-areas: "header"
                           "main"
@@ -85,7 +84,8 @@
           }
 
           .features{
-               @include size(100vh, 100%, #f0eeee, black);
+               @include size(auto, 100%, #f0eeee, black);
+               min-height: 100vh;
                @include flex(center,center,row,0);
                div{
                     height: auto;
@@ -135,14 +135,6 @@
           }          
      }
 }
-@keyframes opacity {
-     0% {
-          opacity: 0;
-     }
-     100% {
-          opacity: 1;
-     }
-}
 @media only screen and (max-width:1440px){
      .homepage{
           main{
@@ -165,6 +157,8 @@
      .homepage{
           main{
                .features{
+                    padding-bottom: 10px;
+                    padding-top: 10px;
                     div{
                          grid-template-rows: 1fr 1fr;
                          grid-template-columns: initial;

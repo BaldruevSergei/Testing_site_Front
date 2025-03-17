@@ -1,4 +1,4 @@
-@import '../mixins.scss';
+@use '../mixins.scss' as *;
 
 header{
      grid-area: header;
@@ -61,7 +61,9 @@ header{
                cursor: pointer;
                
           }
-
+          button:hover{
+               background-color: $buttonhover;
+          }
           button:active{
                transform: scale(1.02);
           }
