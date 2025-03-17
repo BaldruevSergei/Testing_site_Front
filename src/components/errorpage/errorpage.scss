@@ -1,4 +1,4 @@
-@import '../mixins.scss';
+@use '../mixins.scss' as *;
 
 .ErrorPage {
     @include size(auto,100%,white,black);
