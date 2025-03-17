@@ -1,7 +1,8 @@
 @use '../../mixins.scss' as *;
+$questionColor: rgb(146, 146, 146);
 
 .sidebar{
-    @include size(100vh,250px,$hover,black);
+    @include size(100vh,250px,$white,black);
     @include flex(start,start,column,0);
     position: fixed;
     grid-column: 2;
@@ -17,23 +18,54 @@
             @include flex(center,start,row,5px);
         }
     }
-    .currentquestion{
+    .time{
+        min-height: 80px;
+        @include flex(center,center,row,5px);
         width: 100%;
-        min-height: 50px;
-        @include flex(center,center,column,15px);
         font-size: 2rem;
-            span{
-                position: relative;
-            }
-            span::after{
-                content: '';
-                width: 100%;
-                background-color: $button;
-                height: 3px;
-                position: absolute;
-                top: 100%;
-                left: 0;
-            }
     }
-
+    .questionsContainer{
+        padding-left: 15px;
+        min-height: 50vh;
+        .questions{
+            width: 100%;
+            @include flex(start,start,row,5px);
+            flex-wrap: wrap;
+            li{
+                font-size: 1.5rem;
+                min-height: 40px;
+                list-style: none;
+                min-width: 40px;
+                background-color: $questionColor;
+                color: $white;
+                @include flex(center,center,row,0);
+                cursor: pointer;
+                &:hover {
+                    span {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .questionList{
+        margin-top: auto;
+        padding: 20px;
+        @include flex(center,center,row,0);
+        width: 100%;
+        color: $button;
+        font-size: 1.3rem;
+        span{
+            position: relative;
+        }
+        span:after{
+            content: '';
+            background-color: $button;
+            width: 100%;
+            position: absolute;
+            height: 1px;
+            top: 100%;
+            left: 0;
+        }
+    }
 }
