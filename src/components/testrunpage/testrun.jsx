@@ -1,20 +1,25 @@
 import Tests from '../testlibrarypage/notes'
 import './testrun.scss';
-import { useParams } from 'react-router-dom';
+import { useParams , Link} from 'react-router-dom';
 import SideBar from './sidebar';
 import { useEffect, useState } from 'react';
 export default function TestRun(){
     const {id} = useParams();
-    const [currentTest, setTest] = useState({});
+    const [test, setTest] = useState({});
+    const [currentQuestion, setQuestion] = useState(0);
     useEffect(() => {
         setTest(Tests.find((test) => test.id === parseInt(id)));
     },[id])
     return <>
         <div className="testrun">
             <main>
-                
+                <div className='topic'>Рабочая панель <span>/</span> <Link>{test.topic}</Link></div>
+                <h1>{currentQuestion + 1}.{test.questions[currentQuestion].title}</h1>
+                <div className="container">
+
+                </div>
             </main>
-            <SideBar id={id} numQuestions={currentTest.numQuestions}/>
+            <SideBar id={id} numQuestions={test.numQuestions} maxTime={test.maxTime} currentQuestion={currentQuestion}/>
         </div>
     </>
 }
