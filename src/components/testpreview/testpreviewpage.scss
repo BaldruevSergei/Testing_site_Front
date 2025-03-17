@@ -1,0 +1,72 @@
+@use '../mixins.scss' as *;
+.testpreview{
+    background-color: $hover;
+    height: 100vh;
+    @include grid(80px auto, initial, start, start);
+    Header{
+        position: relative;
+        grid-area: 1;
+    }
+    main{
+        width: 100vw;
+        min-height: $mainMinHeight;
+        grid-area: 2;
+        @include flex(center,center,row,0);
+        .container{
+            background-color: $white;
+            width: 50%;
+            min-height: calc($mainMinHeight - $mainMinHeight / 2 - 40px);
+            height: auto;
+        .back{
+            i{
+                padding-left: 10px;
+                min-height: 30px;
+                font-size: 1.4rem;
+                display: inline-flex;
+                gap: 10px;
+                cursor: pointer;
+                position: relative;
+                align-items: center;
+                span{
+                    position: relative;
+                }
+                span::after{
+                    content: '';
+                    background-color: $black;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    height: 2px;
+                    top: 100%;
+                }
+            }
+        }
+            h1{
+                @include flex(center,center,row,0);
+                font-weight: 500;
+            }
+
+            .information{
+                padding: 20px;
+                font-size: 1.5rem;
+                div{
+                    height: 40px;
+                }
+            }
+            .start{
+                width: 100%;
+                @include flex(center,center,row,0);
+                height: 20px;
+                a{
+                    font-size: 1.3rem;
+                    @include size(40px,120px,$button,white);
+                    @include flex(center,center,row,0);
+                    border-radius: 15px;
+                }
+                a:hover{
+                    background-color: $buttonhover;
+                }
+            }
+        }
+    }
+}

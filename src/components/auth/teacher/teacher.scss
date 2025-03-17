@@ -1,4 +1,4 @@
-@import '../../mixins.scss';
+@use '../../mixins.scss' as *;
 
 .TeacherAuth{
      @include size(400px,30%,$white,black);

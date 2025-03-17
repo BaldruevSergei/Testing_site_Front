@@ -1,4 +1,4 @@
-@import '../mixins.scss';
+@use '../mixins' as *;
 .homepage{
      @include size(auto,100%,white,black);
      @include grid(auto auto auto, 1fr, start,start);
