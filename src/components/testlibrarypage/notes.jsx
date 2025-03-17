@@ -9,8 +9,15 @@ const newTests = [
         'maxTime': '60 minutes',
         'numQuestions': 20,
         'maxPoints': 100,
-        'numTries': 1,
+        'numTries': 2,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
+        'questions': [
+            {
+                1: '',
+            },
+        ]
     },
     {
         'id': 1,
@@ -24,6 +31,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
     },
     {
         'id': 2,
@@ -37,6 +46,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
     },
     {
         'id': 3,
@@ -50,6 +61,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
     },
     {
         'id': 4,
@@ -63,6 +76,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
     },
     {
         'id': 5,
@@ -76,6 +91,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
     },
     {
         'id': 6,
@@ -89,6 +106,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
     },
     {
         'id': 7,
@@ -102,6 +121,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
     },
     {
         'id': 8,
@@ -115,6 +136,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
+        'isRunning': false,
+        'isDone': false,
     },
     {
         'id': 9,
@@ -128,6 +151,8 @@ const newTests = [
         'maxPoints': 100,
         'numTries': 1,
         'isAccess': true,
-    }
+        'isRunning': false,
+        'isDone': false,
+    },
 ];
 export default newTests;

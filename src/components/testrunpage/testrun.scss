@@ -2,9 +2,14 @@
 
 .testrun{
     min-height: 100vh;
+    width: 100vw;
     overflow-x: hidden;
-    
+    @include grid(1fr, 1fr 250px, start, start);
+    position: relative;
     main{
-        min-height: $mainMinHeight;
+        min-height: 100vh;
+        overflow-x: hidden;
+        @include size(auto,auto,$white,black);
+        grid-column: span 1;
     }
 }
