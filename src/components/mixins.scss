@@ -6,6 +6,7 @@ $red: #d62828;
 $orange: #f77f00;
 $yellow: #fcbf49;
 $white: #fafafa;
+$mainMinHeight: 800px;
 @mixin flex($align,$justify,$direction,$gap){
      display: flex;
      align-items: $align;

@@ -1,5 +1,5 @@
 @import '../mixins.scss';
-$mainMinHeight: 800px;
+
 .testlibrary{
     background-color: $hover;
     min-height: 100vh;
@@ -10,6 +10,7 @@ $mainMinHeight: 800px;
     overflow-x: hidden;
     @include grid(80px auto, initial, start, start);
     main{
+        padding: 25px;
         grid-row: 2;
         @include flex(center,center,row,0);
         @include size(auto,100vw,'',black);

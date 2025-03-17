@@ -1,0 +1,10 @@
+@import '../mixins.scss';
+
+.testrun{
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+    main{
+        min-height: $mainMinHeight;
+    }
+}
