@@ -27,7 +27,7 @@ import NoAccessPage from '../noaccesspage';
                     <div><strong>Максимальное количество баллов:</strong> {test.maxPoints}</div>
                     <div><strong>Осталось попыток:</strong> {test.numTries}</div>
                 </div>
-                <div className="start"><Link>Начать</Link></div>
+                <div className="start"><Link to={`/TestLibrary/TestRun/${test.id}`}>Начать</Link></div>
             </div>
             </main>
             </div>: <NoAccessPage/> : <ErrorPage />}

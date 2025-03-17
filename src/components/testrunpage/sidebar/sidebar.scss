@@ -1,0 +1,39 @@
+@use '../../mixins.scss' as *;
+
+.sidebar{
+    @include size(100vh,250px,$hover,black);
+    @include flex(start,start,column,0);
+    position: fixed;
+    grid-column: 2;
+    .back{
+        width: 100%;
+        background-color: $button;
+        height: 40px;
+        @include flex(center,start,row,0);
+        padding-left: 15px;
+        a{
+            color: white;
+            font-size: 1.4rem;
+            @include flex(center,start,row,5px);
+        }
+    }
+    .currentquestion{
+        width: 100%;
+        min-height: 50px;
+        @include flex(center,center,column,15px);
+        font-size: 2rem;
+            span{
+                position: relative;
+            }
+            span::after{
+                content: '';
+                width: 100%;
+                background-color: $button;
+                height: 3px;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+    }
+
+}
