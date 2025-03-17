@@ -1,8 +1,9 @@
-   {
+ const newTests = [
+        {
             'date': '01.01.2022',
             'subject': 'Физика',
             'topic': 'Квантовая механика',
-            'result': '95%'
+            'result': '95%',
         },
         {
             'date': '02.01.2022',
@@ -166,3 +167,5 @@
             'topic': 'Программирование',
             'result': '96%'
         },
+    ]
+    export default newTests;
