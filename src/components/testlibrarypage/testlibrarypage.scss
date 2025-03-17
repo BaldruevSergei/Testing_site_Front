@@ -17,11 +17,10 @@
         min-height: $mainMinHeight;
         
         .container{
-          
             min-height: calc($mainMinHeight * 0.9);
             @include size(auto,90%,'',black);
             .tabs{
-                height: calc($mainMinHeight * 0.05);
+                height: calc($mainMinHeight * 0.05 + 5px);
                 @include flex(center,start,row,10px);
                 padding-left: 5px;
                 button{
@@ -136,6 +135,24 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:450px){
+    .testlibrary{
+        main{
+            padding: 0;
+            .container{
+                width: 100%;
+                .tabs{
+                    button{
+                        min-height: 70%;
+                        height: auto;
+                        max-height: 90%;
+                        font-size: 1rem;
                     }
                 }
             }

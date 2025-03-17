@@ -49,7 +49,7 @@ export default function TestLibrary(){
             </ul>
             <div className={`testsLibrary ${tests.length < 1 ? 'empty' : ''}`}>
                 {tests.length === 0 ? activeTab === 0 ? 'У вас нет новых тестов' : 'Вы еще не проходили тесты' : tests.slice(0, lastItem).map((test, index) => (
-                    <Link to={`TestPreview/${test.id}`} className={`test ${index % 2 === 0 ? 'odd' : ''}`}>
+                    <Link to={`TestPreview/${test.id}`} className={`test ${index % 2 === 0 ? 'odd' : ''}`} key={test.id}>
                     <div>{innerWidth < 730 ? <strong>Дата окончания: </strong> : ''}<p>{test.endDate}</p></div>
                     <div>{innerWidth < 730 ? <strong>Предмет: </strong> : ''}<p>{test.subject}</p></div>
                     <div>{innerWidth < 730 ? <strong>Тема: </strong> : ''}<p>{test.topic}</p></div>

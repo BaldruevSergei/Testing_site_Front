@@ -14,49 +14,45 @@
         @include flex(center,center,row,0);
         .container{
             background-color: $white;
-            width: 50%;
-            min-height: calc($mainMinHeight - $mainMinHeight / 2 - 40px);
+            min-width: 55%;
+            width: auto;
+            min-height: calc($mainMinHeight - $mainMinHeight / 2 + 50px);
             height: auto;
         .back{
+            border-bottom: 2px solid;
+            display: block;
+            background-color: $button;
+            color: white;
             i{
                 padding-left: 10px;
-                min-height: 30px;
+                min-height: 40px;
                 font-size: 1.4rem;
                 display: inline-flex;
                 gap: 10px;
                 cursor: pointer;
                 position: relative;
                 align-items: center;
-                span{
-                    position: relative;
-                }
-                span::after{
-                    content: '';
-                    background-color: $black;
-                    width: 100%;
-                    position: absolute;
-                    left: 0;
-                    height: 2px;
-                    top: 100%;
-                }
             }
         }
             h1{
                 @include flex(center,center,row,0);
                 font-weight: 500;
+                padding-left: 15px;
+                padding-right: 15px;
+                text-align: center;
             }
 
             .information{
                 padding: 20px;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
                 div{
-                    height: 40px;
+                    min-height: 40px;
                 }
             }
             .start{
-                width: 100%;
+                padding: 20px;
                 @include flex(center,center,row,0);
-                height: 20px;
+                min-height: 20px;
                 a{
                     font-size: 1.3rem;
                     @include size(40px,120px,$button,white);
@@ -65,6 +61,29 @@
                 }
                 a:hover{
                     background-color: $buttonhover;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:500px){
+    
+    .testpreview{
+        display: initial;
+        .back{
+            @include flex(center,start,row,0);
+            i{
+                height: 50px;
+            }
+        }
+        main{
+            .container{
+                min-height: $mainMinHeight;
+                width: 100%;
+                .information{
+                    padding: 5px;
+                    padding-top: 20px;
                 }
             }
         }
