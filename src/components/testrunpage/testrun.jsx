@@ -13,13 +13,35 @@ export default function TestRun(){
     return <>
         <div className="testrun">
             <main>
-                <div className='topic'>Рабочая панель <span>/</span> <Link>{test.topic}</Link></div>
-                <h1>{currentQuestion + 1}.{test.questions[currentQuestion].title}</h1>
+                <section>
+                <div className='topic'>Рабочая панель <span>/</span> <Link to={`/TestLibrary/TestPreview/${id}`}>{test.topic}</Link></div>
+                {test.questions && test.questions.length > 0 && (
+                    <h1>{currentQuestion + 1}. {test.questions[currentQuestion].title.charAt(0).toUpperCase() + test.questions[currentQuestion].title.slice(1)}</h1>
+                )}
                 <div className="container">
-
+                {test.questions && test.questions.length > 0 && (
+                    <h1>Условие задания: <div>{test.questions[currentQuestion].points}б</div></h1>
+                )}  
+                <div className='questionContainer'>
+                    <div className='question'>
+                        {test.questions && test.questions.length > 0 && (
+                        test.questions[currentQuestion].question
+                        )}  
+                    </div>
+                    <div className='answer'>
+                        {test.questions && test.questions.length > 0 && test.questions[currentQuestion].type === 'input' && (
+                            <>
+                                <div>Ответ: <input type="text" /></div>
+                                <button>Ответить</button>
+                            </>
+                        )}
+                    </div>
                 </div>
+                </div>
+                <div className="arrows"></div>
+                </section>
             </main>
-            <SideBar id={id} numQuestions={test.numQuestions} maxTime={test.maxTime} currentQuestion={currentQuestion}/>
+            <SideBar id={id} numQuestions={test.numQuestions} maxTime={test.maxTime} currentQuestion={currentQuestion} setQuestion={setQuestion}/>
         </div>
     </>
 }

@@ -17,6 +17,7 @@ const newTests = [
                 {
                     type: 'input',
                     title: 'arithmetics',
+                    points: 2,
                     question: 'what is 1 + 1',
                     correctAnswer: 2,
                 },
@@ -25,6 +26,7 @@ const newTests = [
                     title: 'riddle',
                     question: 'what year he was born?',
                     correctAnswerIndex: 2,
+                    points: 4,
                     answers: [
                         '1995',
                         '1992',

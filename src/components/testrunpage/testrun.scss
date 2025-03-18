@@ -4,29 +4,103 @@
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    @include grid(1fr, 1fr 250px, start, start);
+    @include grid(1fr, 1fr 200px, start, start);
     position: relative;
+    background-color: $hover;
     
     main{
         min-height: 100vh;
         overflow-x: hidden;
         @include size(auto,auto,$hover,black);
+        @include flex(start,center,row,0);
         grid-column: span 1;
-        @include flex(center,center,column,0);
-        h1{
-            width: 90%;
-        }
-        .topic{
-            font-size: 1.5rem;
-            margin: 0 auto;
-            width: 90%;
-            a{
-                color: $button;
+        section{
+            padding-top: 25px;
+            width: 70%;
+            h1{
+                width: 90%;
+                min-height: 50px;
+                font-size: 2.2rem;
+                margin-bottom: 25px;
             }
-        }
-        .container{
-            @include size($mainMinHeight,90%,white,black);
+            .topic{
+                font-size: 1.5rem;
+                width: 90%;
+                a{
+                    color: $button;
+                }
+            }
+            .container{
+                @include size(auto,auto,white,black);
+                h1{
+                    padding-left: 40px;
+                    margin-bottom: 0;
+                    max-height: calc(100% * 0.3);
+                    font-size: 2.2rem;
+                    padding-right: 40px;
+                    background-color: $button;
+                    width: 100%;
+                    color: white;
+                    @include flex(center,space-between,row,0);
+                }
+            }
+            .questionContainer{
+                min-height: calc($mainMinHeight / 3);
+                height: auto;
+                width: 100%;
+                padding: 40px;
+                .question{
+                    font-size: 1.5rem;
+                    margin-bottom: 40px;
+                }
+                .answer{
+                    min-height: 80px;
+                    font-size: 1.3rem;
+                    @include flex(start,center,column,25px);
+                    input{
+                        height: 35px;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 1.2rem;
+                        max-width: 100%;
+                        padding-left: 5px;
+                        outline: 2px solid $button;
+                    }
+                    button{
+                        @include size(40px,120px,$button,white);
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
 
+            .arrows{
+                height: auto;
+                width: 100%;
+                min-height: 50px;
+                border: 1px solid;
+                margin-top: 80px;
+            }
+
+        }
+    }
+}
+
+@media only screen and (max-width:800px){
+    main{
+        section{
+            min-width: 100%;
+            @include flex(center,center,column,0);
+        }
+    }
+}
+@media only screen and (max-width:625px){
+    .testrun{
+        @include grid(auto auto, 1fr, start, start);
+        main{
+            grid-column: 1;
+            grid-row: 2;
         }
     }
 }
