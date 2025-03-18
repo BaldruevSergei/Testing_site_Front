@@ -2,8 +2,9 @@
 $questionColor: rgb(146, 146, 146);
 
 .sidebar{
-    @include size(100vh,250px,$white,black);
+    @include size(100vh,200px,$white,black);
     @include flex(start,start,column,0);
+    right: 0;
     position: fixed;
     grid-column: 2;
     .back{
@@ -26,7 +27,18 @@ $questionColor: rgb(146, 146, 146);
     }
     .questionsContainer{
         padding-left: 15px;
-        min-height: 50vh;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
         .questions{
             width: 100%;
             @include flex(start,start,row,5px);
@@ -50,7 +62,7 @@ $questionColor: rgb(146, 146, 146);
     }
     .questionList{
         margin-top: auto;
-        padding: 20px;
+        height: 50px;
         @include flex(center,center,row,0);
         width: 100%;
         color: $button;
@@ -67,5 +79,17 @@ $questionColor: rgb(146, 146, 146);
             top: 100%;
             left: 0;
         }
+    }
+}
+
+
+@media only screen and (max-width:625px){
+    .sidebar{
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        position: relative;
     }
 }
