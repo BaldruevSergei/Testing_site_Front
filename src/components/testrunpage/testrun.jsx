@@ -7,6 +7,7 @@ export default function TestRun(){
     const {id} = useParams();
     const [test, setTest] = useState({});
     const [currentQuestion, setQuestion] = useState(0);
+    const [title, setTitle] = useState('')
     useEffect(() => {
         setTest(Tests.find((test) => test.id === parseInt(id)));
     },[id])
@@ -14,7 +15,7 @@ export default function TestRun(){
         <div className="testrun">
             <main>
                 <div className='topic'>Рабочая панель <span>/</span> <Link>{test.topic}</Link></div>
-                <h1>{currentQuestion + 1}.{test.questions[currentQuestion].title}</h1>
+                <h1>{currentQuestion + 1}.{title}</h1>
                 <div className="container">
 
                 </div>
