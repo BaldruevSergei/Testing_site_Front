@@ -103,6 +103,7 @@
                 span{
                     @include flex(center,start,column,0);
                     cursor: pointer;
+                    text-align: center;
                     i{
                         font-size: 2rem;
                         color: $button;
