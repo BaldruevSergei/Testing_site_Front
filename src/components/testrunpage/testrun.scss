@@ -51,12 +51,23 @@
                 padding: 40px;
                 .question{
                     font-size: 1.5rem;
+                    cursor: default;
                     margin-bottom: 40px;
                 }
                 .answer{
                     min-height: 80px;
                     font-size: 1.3rem;
                     @include flex(start,center,column,25px);
+                    ul{
+                        list-style: none;
+                        @include flex(start,start,column,0);
+                        li{
+                            @include flex(center,start,row,5px);
+                            input{
+                                outline: none;
+                            }
+                        }
+                    }
                     input{
                         height: 35px;
                         border: none;
@@ -72,15 +83,32 @@
                         border-radius: 5px;
                         font-size: 1.2rem;
                     }
+                    button:hover{
+                        background-color: $buttonhover;
+                        cursor: pointer;
+                    }
                 }
             }
 
             .arrows{
                 height: auto;
-                width: 100%;
+                width: 90%;
+                margin: 0 auto;
                 min-height: 50px;
-                border: 1px solid;
                 margin-top: 80px;
+                @include grid(1fr, 1fr 1fr,start,start);
+                span:nth-of-type(2){
+                    grid-column: 2;
+                }
+                span{
+                    @include flex(center,start,column,0);
+                    cursor: pointer;
+                    i{
+                        font-size: 2rem;
+                        color: $button;
+                    }
+                    font-size: 1.2rem;
+                }
             }
 
         }
@@ -90,8 +118,15 @@
 @media only screen and (max-width:800px){
     main{
         section{
-            min-width: 100%;
+            width: 100%;
             @include flex(center,center,column,0);
+            min-width: 100%;
+            .container{
+                min-width: 90%;
+            }
+            .arrows{
+                max-width: 90%;
+            }
         }
     }
 }
