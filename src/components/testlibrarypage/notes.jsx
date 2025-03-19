@@ -1,14 +1,13 @@
 const newTests = [
     {   
-        'id': 0,
+        'id': 15321356213,
         'subject': 'Физика',
         'topic': 'Квантовая механика',
-        'result': '95%',
         'startDate': '01.01.2022',
         'endDate': '15.01.2022',
         'maxTime': 60,
-        'numQuestions': 3,
-        'maxPoints': 100,
+        'numQuestions': null,
+        'maxPoints': null,
         'numTries': 2,
         'isAccess': true,
         'isRunning': false,
@@ -20,6 +19,7 @@ const newTests = [
                     points: 2,
                     question: 'what is 1 + 1',
                     correctAnswer: 2,
+                    isAnswered: true,
                 },
                 {
                     type: 'singleChoice',
@@ -32,7 +32,8 @@ const newTests = [
                         '1992',
                         '1994',
                         '1998',
-                    ]
+                    ],
+                    isAnswered: true,
                 },
                 {
                     type: 'multipleChoice',
@@ -45,9 +46,39 @@ const newTests = [
                         '13232',
                         '1123',
                         '1421'
-                    ]
-                }
+                    ],
+                    isAnswered: false,
+                },
+                {
+                    type: 'input',
+                    title: 'arithmetics',
+                    points: 2,
+                    question: 'what is 1 + 1',
+                    correctAnswer: 2,
+                    isAnswered: true,
+                },
+                {
+                    type: 'singleChoice',
+                    title: 'riddle',
+                    question: 'what year he was born?',
+                    correctAnswer: 1995,
+                    points: 15,
+                    answers: [
+                        '1995',
+                        '1992',
+                        '1994',
+                        '1998',
+                    ],
+                    isAnswered: true,
+                },
         ]   
     },
 ];
+newTests.forEach(test => {
+    test.numQuestions = test.questions.length;
+    test.maxPoints = test.questions.reduce((sum, question) => {
+        return sum + question.points;
+    }, 0);
+});
+
 export default newTests;

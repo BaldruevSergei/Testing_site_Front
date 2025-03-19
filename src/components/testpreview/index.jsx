@@ -26,7 +26,7 @@ import NoAccessPage from '../noaccesspage';
                     <div><strong>Количество заданий:</strong> {test.numQuestions}</div>
                     <div><strong>Максимальное количество баллов:</strong> {test.maxPoints}</div>
                     <div><strong>Осталось попыток:</strong> {test.numTries}</div>
-                    <div><strong>Максимальное время:</strong> {test.maxTime}</div>
+                    <div><strong>Максимальное время:</strong> {test.maxTime} минут</div>
                 </div>
                 <div className="start"><Link to={`/TestLibrary/TestRun/${test.id}`}>Начать</Link></div>
             </div>
