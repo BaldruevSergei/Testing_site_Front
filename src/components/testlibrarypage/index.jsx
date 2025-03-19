@@ -57,10 +57,13 @@ export default function TestLibrary(){
                     </Link> 
                 ))}
             </div>
-            <div className='loadmore' style={{display: tests.length < lastItem || tests.length - lastItem === 0? 'none' : 'flex'}}>
-            <button onClick={() => setItem(prevItem => prevItem + (tests.length - lastItem < 8 ? tests.length - lastItem : 8))}>{`Загрузить еще ${tests.length - lastItem < 8 ? tests.length - lastItem : 8} ${tests.length - lastItem === 1 ? 'тест' : 'тестов'}`}</button>
-            </div>
-        </div>
+            {
+                tests.length < lastItem || tests.length - lastItem === 0 ? '' : 
+                (<div className='loadmore'>
+                    <button onClick={() => setItem(prevItem => prevItem + (tests.length - lastItem < 8 ? tests.length - lastItem : 8))}>{`Загрузить еще ${tests.length - lastItem < 8 ? tests.length - lastItem : 8} ${tests.length - lastItem === 1 ? 'тест' : 'тестов'}`}</button>
+                </div>)
+            }
+        </div>  
      </div>
      </main>
     </div>

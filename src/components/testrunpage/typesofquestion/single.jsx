@@ -6,6 +6,5 @@ export default function SingleChoice(props){
             <li key={index}><input type="radio" id={answer} name={`question-${currentQuestion}`} value={answer}/><label htmlFor={answer}>{answer}</label></li>
         ))}
     </ul>
-    <button>Ответить</button>
              </>
 }

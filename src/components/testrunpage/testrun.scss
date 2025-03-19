@@ -73,7 +73,8 @@
                         border: none;
                         border-radius: 5px;
                         font-size: 1.2rem;
-                        max-width: 100%;
+                        width: auto;
+                        max-width: 50%;
                         padding-left: 5px;
                         outline: 2px solid $button;
                     }
@@ -88,6 +89,42 @@
                         cursor: pointer;
                     }
                 }
+
+                .list{
+                    padding: 0;
+                    list-style: none;
+                    li{
+                        width: 100%;
+                        border-bottom: 1px dashed black;
+                        height: 35px;
+                        @include grid(1fr, 40px 1fr  120px 20px , center, start);
+                        font-size: 1.3rem ;
+                        span{
+                            a{
+                                color: $button;
+                            }
+                            a:hover{
+                                text-decoration: underline;
+                            }
+                        }
+                        .isAnswered{
+                            color: gray;
+                            font-size: 1.2rem;
+                        }
+                        @media only screen and (max-width:400px){
+                            .isAnswered{
+                                display: none;
+                            }
+                            grid-template-columns: 40px 1fr 20px;
+                        }
+                        .point{
+                            padding-right: 5px;
+                            font-size: 1.3rem;
+                            @include flex(center,flex-end,row,0);
+                        }
+                    }
+                }
+
             }
 
             .arrows{
@@ -104,14 +141,23 @@
                     @include flex(center,start,column,0);
                     cursor: pointer;
                     text-align: center;
+                    transition: all 0.2s ease-in-out;
                     i{
                         font-size: 2rem;
                         color: $button;
+                    }
+                    &:hover{
+                        transform: scale(1.05);
+
                     }
                     font-size: 1.2rem;
                 }
             }
 
+
+            .TestList{
+           
+            }
         }
     }
 }
@@ -123,7 +169,7 @@
             @include flex(center,center,column,0);
             min-width: 100%;
             .container{
-                min-width: 90%;
+                max-width: 90%;
             }
             .arrows{
                 max-width: 90%;
