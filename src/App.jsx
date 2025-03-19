@@ -7,7 +7,8 @@ import ErrorPage from './components/errorpage';
 import TestLibrary from './components/testlibrarypage';
 import TestRun from './components/testrunpage/testrun';
 import TestPreview from './components/testpreview';
-import TestList from './components/testrunpage/testlist'
+import Contacts from './components/contactspage'
+
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
           <Route path='/TestLibrary' element={<TestLibrary/>}></Route>
           <Route path='TestLibrary/TestRun/:id' element={<TestRun/>}></Route>
           <Route path='TestLibrary/TestPreview/:id' element={<TestPreview/>}></Route>
+          <Route path='/Contacts' element={<Contacts/>}></Route>
         </Routes>
       </BrowserRouter>
     </>
