@@ -19,7 +19,7 @@ const newTests = [
                     points: 2,
                     question: 'what is 1 + 1',
                     correctAnswer: 2,
-                    isAnswered: true,
+                    isAnswered: false,
                 },
                 {
                     type: 'singleChoice',
@@ -33,7 +33,7 @@ const newTests = [
                         '1994',
                         '1998',
                     ],
-                    isAnswered: true,
+                    isAnswered: false,
                 },
                 {
                     type: 'multipleChoice',
@@ -55,7 +55,7 @@ const newTests = [
                     points: 2,
                     question: 'what is 1 + 1',
                     correctAnswer: 2,
-                    isAnswered: true,
+                    isAnswered: false,
                 },
                 {
                     type: 'singleChoice',
@@ -69,7 +69,7 @@ const newTests = [
                         '1994',
                         '1998',
                     ],
-                    isAnswered: true,
+                    isAnswered: false,
                 },
         ]   
     },

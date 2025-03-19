@@ -1,7 +1,8 @@
 @use '../mixins.scss' as *;
 .AuthPage{
  @include flex(center,center,row,0);
- @include size(100vh,100vw,$black,$white);
+ @include size(auto,100vw,$black,$white);
+ min-height: 100vh;
  .home{
      position: absolute;
      left: 0;
