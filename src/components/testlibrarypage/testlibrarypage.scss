@@ -12,10 +12,11 @@
     main{
         padding: 25px;
         grid-row: 2;
-        @include flex(center,center,row,0);
+        @include flex(center,start,column,0);
         @include size(auto,100vw,'',black);
         min-height: $mainMinHeight;
-        
+       
+
         .container{
             min-height: calc($mainMinHeight * 0.9);
             @include size(auto,90%,'',black);
