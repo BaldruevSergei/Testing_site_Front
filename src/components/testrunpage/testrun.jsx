@@ -53,6 +53,7 @@ export default function TestRun(){
             </div>
             <div className="arrows">
                     <span style={{display: currentQuestion > 0 ? 'flex' : 'none'}} onClick={() => {currentQuestion > 0 ? setQuestion(prev => prev - 1) : ''}}><i className="fa fa-arrow-circle-left"></i>Предыдущее задание</span>
+                    <span onClick={() => {setList(true)}}><i class="fa fa-arrow-circle-up"></i>Список заданий</span>
                     <span style={{display: test.questions.length - 1 > currentQuestion ? 'flex' : 'none'}} onClick={() => {test.questions.length - 1> currentQuestion ? setQuestion(prev => prev + 1) : ''}}><i className="fa fa-arrow-circle-right"></i>Следующее задание</span>
             </div>
             </>
