@@ -1,0 +1,26 @@
+1. adminpage
+    * All tests
+    * All teachers
+    * All students
+    * All classes
+    * Delete functions
+    * Add functions 
+    * Custom test previews with correct answers 
+
+
+2. teacherspage
+    * My tests
+    * My students
+    * My classes
+    * Delete functions
+    * Add functions 
+    * Custom test previews with correct answers 
+    
+
+3. contactspage
+    * Link to contact and portfolio
+
+    
+4. resultspage
+    * At the end of test run
+    * When clicked on previoustests
