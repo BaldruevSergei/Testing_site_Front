@@ -16,7 +16,7 @@ function App() {
   const [isLoggedIn, setLogged] = useState(true); 
   const [accountType, setType] = useState('') 
   useEffect(() => {
-    setType('teacher')
+    setType('admin');
   },[accountType])
 
   return (
