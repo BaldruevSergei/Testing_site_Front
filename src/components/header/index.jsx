@@ -8,7 +8,7 @@ import { UserContext } from '../../App';
 export default function Header(){
      const [menu, setMenu] = useState(false);
      const [loginMenu, setLogin] = useState(false);
-     const isLoggedIn = useContext(UserContext);
+     const {isLoggedIn, accountType} = useContext(UserContext);
      return <header>
           <div className="logo">
           <i className="fa fa-bars" id="menuBtn" onClick={() => {setMenu(!menu); setLogin(false)}}></i>
@@ -20,7 +20,7 @@ export default function Header(){
                     <Links/>
                </span>
                {!isLoggedIn &&
-               (<><button onClick={() => {setLogin(!loginMenu); setMenu(false)}}>Зайти</button>
+               (<><button onClick={() => {setLogin(!loginMenu); setMenu(false)}}>Войти</button>
                <div className='loginOptions' style={{height: loginMenu ? "150px" : '0',}}>
                     <Link to='/Auth/Student'>
                     <i className='fas fa-user-graduate'></i>Студент</Link>
@@ -41,12 +41,13 @@ export default function Header(){
                                    </div>
                                    <div className="studentinfo">
                                         <li>Имя: <div></div></li>
-                                        <li>Класс: <div></div> </li>
+                                        {accountType === 'student' && (<li>Класс: <div></div> </li>)}
                                         <li>Имайл: <div></div></li>
-                                        <li>Роль: <div></div></li>
+                                        <li>Роль: <div>{accountType}</div></li>
                                    </div>
                                    </span>
                                    <button>Редактировать профиль</button>
+                                   <button>Выйти</button>
                               </div>
                     </div>
                )}

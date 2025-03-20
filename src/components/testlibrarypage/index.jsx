@@ -12,7 +12,7 @@ export default function TestLibrary(){
     const [tests, setTests] = useState([]);
     const [lastItem, setItem] = useState(12);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const isLoggedIn = useContext(UserContext);
+    const { isLoggedIn, accountType } = useContext(UserContext);
     // THESE TESTS ARE JUST DUMMIES 
     // USE SHIFT OR PUSH TO ADD NEW TESTS NOT PUSH, IF ITS PUSH REVERSE THE ARRAY SO THE RECENT ONES COME FROM THE TOP
     const previousTests = [
@@ -36,12 +36,12 @@ export default function TestLibrary(){
     if (!isLoggedIn) {
         return <Navigate to="/Auth/AuthLinks" state={{ from: location }} />;
     }
-    // if(isAdmin){
-    //     return <Navigate to='/AdminPage' state={{from: location}}/>
-    // }
-    // if(isTeacher){
-    //     return <Navigate to='/TeacherPage' state={{from: location}}/>
-    // }
+    if(accountType === 'admin'){
+        return <Navigate to='/AdminControls' state={{from: location}}/>
+    }
+    if(accountType === 'teacher'){
+        return <Navigate to='/TeacherControls' state={{from: location}}/>
+    }
 
     return <>
     <div className='testlibrary'>
