@@ -7,7 +7,7 @@ import ErrorPage from '../errorpage';
 import Tests from '../testlibrarypage/notes'
 import NoAccessPage from '../noaccesspage';
     export default function TestPreview() {
-        const isLoggedIn = useContext(UserContext);
+        const {isLoggedIn}= useContext(UserContext);
         const {id} = useParams();
         const [test, setTest] = useState({});
         useEffect(() => {

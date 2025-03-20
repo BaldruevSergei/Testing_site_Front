@@ -14,8 +14,7 @@ export default function TestRun(){
     const [test, setTest] = useState({});
     const [currentQuestion, setQuestion] = useState(0);
     const [testList, setList] = useState(false);
-    const isLoggedIn = useContext(UserContext);
-
+    const {isLoggedIn} = useContext(UserContext);
     useEffect(() => {
         setTest(Tests.find((test) => test.id === parseInt(id)));
     },[id]);

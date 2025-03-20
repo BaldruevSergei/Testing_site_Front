@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import Homepage from './components/homepage'
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -9,12 +9,18 @@ import TestRun from './components/testrunpage/testrun';
 import TestPreview from './components/testpreview';
 import Contacts from './components/contactspage'
 import AdminPage from './components/adminpage';
+import TeacherPage from './components/teacherpage';
 const UserContext = createContext();
 
 function App() {
-  const [isLoggedIn, setLogged] = useState(true);  
+  const [isLoggedIn, setLogged] = useState(true); 
+  const [accountType, setType] = useState('') 
+  useEffect(() => {
+    setType('teacher')
+  },[accountType])
+
   return (
-    <UserContext.Provider value={isLoggedIn}>
+    <UserContext.Provider value={{ isLoggedIn, accountType , setLogged}} >
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepage />} />
@@ -25,7 +31,7 @@ function App() {
           <Route path='/TestLibrary/TestPreview/:id' element={<TestPreview />} />
           <Route path='/Contacts' element={<Contacts />} />
           <Route path='/AdminControls' element={<AdminPage/>} />
-          {/* <Route path='/TeacherControls' element={<TeacherPage/>}></Route> */}
+          <Route path='/TeacherControls' element={<TeacherPage/>}></Route>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

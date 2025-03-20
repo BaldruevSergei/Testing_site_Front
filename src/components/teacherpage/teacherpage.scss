@@ -1,6 +1,6 @@
 @use '../mixins.scss' as *;
 
-.adminpage{
+.teacherpage{
     @include grid(1fr, 250px 1fr, start, start);
     min-height: 100vh;
     .sidebar{
@@ -10,17 +10,25 @@
         .Logo{
             width: 100%;
             min-height: 150px;
+            height: auto;
             a{
-            height: 80px;
-            width: 100%;
             font-size: 2rem;
-            @include flex(center,center,row,0);
             color: white;
+            height: 70px;
+            @include flex(center,center,row,0);
             }
-            div{
-                font-size: 1.5rem;
-                height: 20px;
-                @include flex(center,center,row,0);
+            .name{
+                width: 90%;
+                margin: 0 auto;
+                @include flex(center,start,column,5px);
+                font-size: 1.2rem;
+                color: $main;
+                text-align: center;
+                div{
+                    color: white;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                }
             }
         }
         ul{
