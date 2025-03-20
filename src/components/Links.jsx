@@ -5,7 +5,7 @@ export default function Links(){
      <i className="fa fa-home"></i>
      Начало
      </Link>
-     <Link to='/TestLibrary'>
+     <Link to='/AdminControls'>
      <i className="fa fa-book"></i>
      Рабочая панель
      </Link>
