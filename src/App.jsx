@@ -8,10 +8,11 @@ import TestLibrary from './components/testlibrarypage';
 import TestRun from './components/testrunpage/testrun';
 import TestPreview from './components/testpreview';
 import Contacts from './components/contactspage'
+import AdminPage from './components/adminpage';
 const UserContext = createContext();
 
 function App() {
-  const [isLoggedIn, setLogged] = useState(false);  
+  const [isLoggedIn, setLogged] = useState(true);  
   return (
     <UserContext.Provider value={isLoggedIn}>
       <BrowserRouter>
@@ -23,6 +24,8 @@ function App() {
           <Route path='/TestLibrary/TestRun/:id' element={<TestRun />} />
           <Route path='/TestLibrary/TestPreview/:id' element={<TestPreview />} />
           <Route path='/Contacts' element={<Contacts />} />
+          <Route path='/AdminControls' element={<AdminPage/>} />
+          {/* <Route path='/TeacherControls' element={<TeacherPage/>}></Route> */}
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

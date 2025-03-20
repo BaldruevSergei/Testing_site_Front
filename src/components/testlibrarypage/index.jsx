@@ -36,6 +36,13 @@ export default function TestLibrary(){
     if (!isLoggedIn) {
         return <Navigate to="/Auth/AuthLinks" state={{ from: location }} />;
     }
+    // if(isAdmin){
+    //     return <Navigate to='/AdminPage' state={{from: location}}/>
+    // }
+    // if(isTeacher){
+    //     return <Navigate to='/TeacherPage' state={{from: location}}/>
+    // }
+
     return <>
     <div className='testlibrary'>
     <Header/>
