@@ -1,16 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './testpreviewpage.scss';
-import { Link, useParams} from 'react-router-dom';
+import { UserContext } from '../../App';
+import { Link, useLocation, useParams, Navigate} from 'react-router-dom';
 import Header from '../header';
 import ErrorPage from '../errorpage';
 import Tests from '../testlibrarypage/notes';
 import NoAccessPage from '../noaccesspage';
     export default function TestPreview() {
+        const isLoggedIn = useContext(UserContext);
         const {id} = useParams();
         const [test, setTest] = useState({});
         useEffect(() => {
            setTest(Tests.find((test) => test.id === parseInt(id)));
         }, [id]);
+
+        const location = useLocation();
+        if (!isLoggedIn) {
+            return <Navigate to="/Auth/AuthLinks" state={{ from: location }} />;
+        }
         return <>
             {test ? test.isAccess ? <div className='testpreview'>
             <Header/>

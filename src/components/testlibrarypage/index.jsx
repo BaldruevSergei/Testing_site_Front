@@ -1,7 +1,8 @@
 import './testlibrarypage.scss';
 import Header from '../header';
-import { useEffect, useState } from 'react';   
-import { Link, useLocation } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../App';
+import { Link, useLocation , Navigate} from 'react-router-dom';
 import newTests from './notes';
 import Oros3 from '../../assets/oros3logo.png'
 
@@ -11,8 +12,7 @@ export default function TestLibrary(){
     const [tests, setTests] = useState([]);
     const [lastItem, setItem] = useState(12);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-
+    const isLoggedIn = useContext(UserContext);
     // THESE TESTS ARE JUST DUMMIES 
     // USE SHIFT OR PUSH TO ADD NEW TESTS NOT PUSH, IF ITS PUSH REVERSE THE ARRAY SO THE RECENT ONES COME FROM THE TOP
     const previousTests = [
@@ -29,6 +29,12 @@ export default function TestLibrary(){
     const changeTab = (index) => {  
         index === 0 ? setTests(newTests) : setTests(previousTests);
         setItem(12);
+    }
+    
+    // Redirect to auth page if the user is not logged in
+    const location = useLocation();
+    if (!isLoggedIn) {
+        return <Navigate to="/Auth/AuthLinks" state={{ from: location }} />;
     }
     return <>
     <div className='testlibrary'>

@@ -70,6 +70,7 @@ header{
           
           .responsiveMenu{
                display: none;
+               z-index: 5;
           }
           .loginOptions{
                position: absolute;
@@ -163,6 +164,12 @@ header{
                          height: 100%;
                          grid-row: 2;
                     }
+               }
+          }
+
+          @media only screen and (max-width:730px){
+               .profile{
+                    justify-content: flex-end;
                }
           }
      }

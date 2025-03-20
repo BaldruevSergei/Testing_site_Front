@@ -5,6 +5,7 @@ import TeacherLogin from "./teacher/teacherlogin";
 import AdminLogin from "./admin/adminlogin";
 import ErrorPage from "../errorpage";
 import StudentSignUp from "./student/studentsignup";
+import AuthLinks from './AuthLinks';
 import './authpage.scss'
 export default function AuthPage() {
     const { id } = useParams();
@@ -13,6 +14,7 @@ export default function AuthPage() {
         Teacher: TeacherLogin,
         Admin: AdminLogin,
         StudentSignUp: StudentSignUp,
+        AuthLinks: AuthLinks,
     };
     const FormComponent = formComponents[id] || null;
 

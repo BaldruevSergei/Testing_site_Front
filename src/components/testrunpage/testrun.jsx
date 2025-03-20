@@ -1,21 +1,30 @@
 import Tests from '../testlibrarypage/notes'
 import './testrun.scss';
-import { useParams , Link} from 'react-router-dom';
+import { useParams , Link, useLocation, Navigate} from 'react-router-dom';
 import SideBar from './sidebar';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import MultipleChoice from './typesofquestion/multiple';
 import SingleChoice from './typesofquestion/single';
 import Input from './typesofquestion/input';
 import TestList from './testlist';
-import ErrorPage from '../errorpage'
+import ErrorPage from '../errorpage';
+import { UserContext } from '../../App';
 export default function TestRun(){
     const {id} = useParams();
     const [test, setTest] = useState({});
     const [currentQuestion, setQuestion] = useState(0);
     const [testList, setList] = useState(false);
+    const isLoggedIn = useContext(UserContext);
+
     useEffect(() => {
         setTest(Tests.find((test) => test.id === parseInt(id)));
-    },[id])
+    },[id]);
+
+    const location = useLocation();
+        if (!isLoggedIn) {
+            return <Navigate to="/Auth/AuthLinks" state={{ from: location }} />;
+        }
+
     return (<>
         {test && test.questions && test.questions.length > 0  ? (
         <div className="testrun">

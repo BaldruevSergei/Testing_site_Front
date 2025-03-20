@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import './header.scss';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Links from '../Links';
 import Logo from '../../assets/logo.png';
+import { UserContext } from '../../App';
 export default function Header(){
      const [menu, setMenu] = useState(false);
      const [loginMenu, setLogin] = useState(false);
-     const [isLoggedIn, setLogged] = useState(false);
+     const isLoggedIn = useContext(UserContext);
      return <header>
-
           <div className="logo">
           <i className="fa fa-bars" id="menuBtn" onClick={() => {setMenu(!menu); setLogin(false)}}></i>
                <p><i className='fas fa-graduation-cap'></i>EduTest</p>
