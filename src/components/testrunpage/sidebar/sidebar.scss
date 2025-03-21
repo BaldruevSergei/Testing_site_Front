@@ -1,12 +1,12 @@
 @use '../../mixins.scss' as *;
 $questionColor: rgb(146, 146, 146);
 
-.sidebar{
+.testSidebar{
     @include size(100vh,200px,$white,black);
     @include flex(start,start,column,0);
-    right: 0;
+    left: 0;
     position: fixed;
-    grid-column: 2;
+    grid-column: 1;
     .back{
         width: 100%;
         background-color: $button;
@@ -84,7 +84,7 @@ $questionColor: rgb(146, 146, 146);
 
 
 @media only screen and (max-width:625px){
-    .sidebar{
+    .testSidebar{
         grid-column: 1;
         grid-row: 1;
         width: 100%;

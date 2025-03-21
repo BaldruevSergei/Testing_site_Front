@@ -1,18 +1,30 @@
 import './testlibrarypage.scss';
 import Header from '../header';
-import { useEffect, useState } from 'react';   
-import { Link, useLocation } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from '../../App';
+import { Link, useLocation , Navigate} from 'react-router-dom';
 import newTests from './notes';
-
-
+import Oros3 from '../../assets/oros3logo.png'
+import SideBar from '../sidebar/sidebar';
 export default function TestLibrary(){
     const [activeTab, setActiveTab] = useState(0);
     const tabs = ['Новые тесты','Пройденные тесты'];
     const [tests, setTests] = useState([]);
     const [lastItem, setItem] = useState(12);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-
+    const { isLoggedIn, accountType } = useContext(UserContext);
+    const links = [
+        {
+            title: 'Все тесты',
+            icon: 'fas fa-book-open',
+            func: '',
+        },
+        {
+            title: 'Мой класс',
+            func: '',
+            icon: 'fas fa-users'
+        }
+    ]
     // THESE TESTS ARE JUST DUMMIES 
     // USE SHIFT OR PUSH TO ADD NEW TESTS NOT PUSH, IF ITS PUSH REVERSE THE ARRAY SO THE RECENT ONES COME FROM THE TOP
     const previousTests = [
@@ -30,9 +42,22 @@ export default function TestLibrary(){
         index === 0 ? setTests(newTests) : setTests(previousTests);
         setItem(12);
     }
+    
+    // Redirect to auth page if the user is not logged in
+    const location = useLocation();
+    if (!isLoggedIn) {
+        return <Navigate to="/Auth/AuthLinks" state={{ from: location }} />;
+    }
+    if(accountType === 'admin'){
+        return <Navigate to='/AdminControls' state={{from: location}}/>
+    }
+    if(accountType === 'teacher'){
+        return <Navigate to='/TeacherControls' state={{from: location}}/>
+    }
+
     return <>
     <div className='testlibrary'>
-    <Header/>
+    <SideBar Links={links}/>
     <main>
      <div className="container">
         <div className="tabs">
@@ -57,10 +82,13 @@ export default function TestLibrary(){
                     </Link> 
                 ))}
             </div>
-            <div className='loadmore' style={{display: tests.length < lastItem || tests.length - lastItem === 0? 'none' : 'flex'}}>
-            <button onClick={() => setItem(prevItem => prevItem + (tests.length - lastItem < 8 ? tests.length - lastItem : 8))}>{`Загрузить еще ${tests.length - lastItem < 8 ? tests.length - lastItem : 8} ${tests.length - lastItem === 1 ? 'тест' : 'тестов'}`}</button>
-            </div>
-        </div>
+            {
+                tests.length < lastItem || tests.length - lastItem === 0 ? '' : 
+                (<div className='loadmore'>
+                    <button onClick={() => setItem(prevItem => prevItem + (tests.length - lastItem < 8 ? tests.length - lastItem : 8))}>{`Загрузить еще ${tests.length - lastItem < 8 ? tests.length - lastItem : 8} ${tests.length - lastItem === 1 ? 'тест' : 'тестов'}`}</button>
+                </div>)
+            }
+        </div>  
      </div>
      </main>
     </div>

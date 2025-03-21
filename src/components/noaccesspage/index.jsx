@@ -8,8 +8,8 @@ export default function NoAccess(){
         <Header/>
         <main>
             <h1>Внимание</h1>
-            <p>У вас нет доступа к данной проверочной работе</p>
-            <Link to='/TestLibrary'>Вернуться назад</Link>
+            <p>У вас нет доступа к данной</p>
+            <Link to='/'>Вернуться назад</Link>
         </main>
     </div>
     </>

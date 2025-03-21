@@ -8,14 +8,16 @@
         position: relative;
     }
     overflow-x: hidden;
-    @include grid(80px auto, initial, start, start);
+    @include grid( 80px auto, 250px 1fr, start, start);
     main{
         padding: 25px;
         grid-row: 2;
-        @include flex(center,center,row,0);
-        @include size(auto,100vw,'',black);
+        grid-column: 2;
+        @include flex(center,start,column,0);
+        @include size(auto,100%,'',black);
         min-height: $mainMinHeight;
-        
+       
+
         .container{
             min-height: calc($mainMinHeight * 0.9);
             @include size(auto,90%,'',black);
@@ -109,6 +111,15 @@
                     }
                 }
             }
+        }
+    }
+}
+@media only screen and (max-width:1000px){
+    .testlibrary{
+        grid-template-columns: 1fr;
+        main{
+            grid-column: 1;
+            height: 150vh;
         }
     }
 }

@@ -1,7 +1,10 @@
 @use '../mixins.scss' as *;
 .AuthPage{
  @include flex(center,center,row,0);
- @include size(100vh,100vw,$black,$white);
+ @include size(auto,100vw,$black,$white);
+ min-height: 100vh;
+
+
  .home{
      position: absolute;
      left: 0;
@@ -11,5 +14,54 @@
      font-size: 3rem;
      cursor: pointer;
  }
+ .middle{
+    min-height: 300px;
+    min-width: 200px;
+    background-color: $buttonhover;
+    transition: all 0.2s ease;
+    color: white;
+    padding-top: 70px;
+    i{
+        font-size: 5rem;
+    }
+ }
+ .side{
+    background-color: $main;
+    min-height: 220px;
+    min-width: 160px;
+    i{
+        font-size: 4rem;
+    }
+    transition: all 0.1s linear;
+    padding-top: 50px;
+ }
+ .middle,.side{
+    text-align: center;
+    @include flex(center,start,column,15px);
+    font-size: 1.2rem;
+    span{
+        display: block;
+        text-transform: uppercase;
+        font-family: sans-serif;
+    }
+ }
+    .side:hover {
+        background-color: $white;
+    }
+    .middle:hover{
+        background-color: $button;
+    }
 }
- 
+@media only screen and (max-width:550px){
+    .AuthPage{
+        min-height: 110vh;
+        flex-direction: column;
+        .middle,.side{
+            width: 80%;
+            max-height: 200px;
+            min-height: 200px;
+            padding: 0;
+            @include flex(center,center,column,0);
+        }
+    }
+}

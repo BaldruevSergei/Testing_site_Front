@@ -80,6 +80,8 @@
 
 .StudentAuthSignUp{
     @include size(auto,auto,$white,black);
+    position: relative;
+    top: 50px;
     min-height: 600px;
     min-width: 550px;
     text-align: center;

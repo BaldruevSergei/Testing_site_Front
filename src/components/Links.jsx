@@ -9,7 +9,7 @@ export default function Links(){
      <i className="fa fa-book"></i>
      Рабочая панель
      </Link>
-     <Link to='/'>
+     <Link to='/Contacts'>
      <i className="fa fa-phone"></i>
      Контакты
      </Link>
