@@ -17,7 +17,7 @@ function App() {
   const [accountType, setType] = useState('') 
   // FOR TESTING, CHANGE THE TYPE TO EITHER teacher, student, admin TO SEE THE CHANGES BETWEEN COMPONENTS ALSO CHANGE LOGGED IN TO SEE THE REQUIREMENT FOR LOGGING IN
   useEffect(() => {
-    setType('admin');
+    setType('student');
   },[accountType])
 
   return (

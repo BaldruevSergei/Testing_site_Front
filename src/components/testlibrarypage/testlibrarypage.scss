@@ -118,6 +118,7 @@
     .testlibrary{
         grid-template-columns: 1fr;
         main{
+            grid-column: 1;
             height: 150vh;
         }
     }
