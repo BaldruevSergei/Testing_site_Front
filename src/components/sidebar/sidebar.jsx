@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/logo.png'
 import './sidebar.scss'
-import { useState } from 'react';
-
+import { useContext, useState } from 'react';
+import { UserContext } from '../../App';
 export default function SideBar(props){
     const [menu, setMenu] = useState(false);
+    const {accountType} = useContext(UserContext)
     return (
         <nav className="sidebar" style={{justifyContent: !menu ? 'space-between' : 'flex-end'}}>
             {!menu ? (<Link to='/' className='logo'><i className='fas fa-graduation-cap'></i>EduTest</Link>) : ''}
@@ -15,7 +16,7 @@ export default function SideBar(props){
                 <span className='pfp'><img src='' alt="" /><Link>Профиль</Link></span>
                 <span className='info'>
                     <p>Name</p>
-                    <p>Роль: </p>
+                    <p>Роль: {accountType}</p>
                     <div><Link><i className='fas fa-user-circle'></i><span>Мой Профиль</span></Link>
                     <Link><i className='fas fa-user-alt-slash'></i><span>Выйти</span></Link>
                     </div>
