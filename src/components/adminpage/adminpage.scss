@@ -3,54 +3,12 @@
 .adminpage{
     @include grid(1fr, 250px 1fr, start, start);
     min-height: 100vh;
-    .sidebar{
-        position: fixed;
-        @include size(100vh,250px,$black,white);
-        left: 0;
-        .Logo{
-            width: 100%;
-            min-height: 150px;
-            a{
-            height: 80px;
-            width: 100%;
-            font-size: 2rem;
-            @include flex(center,center,row,0);
-            color: white;
-            }
-            div{
-                font-size: 1.5rem;
-                height: 20px;
-                @include flex(center,center,row,0);
-            }
-        }
-        ul{
-            height: 200px;
-            @include flex(start,start,column,0);
-            width: 100%;
-            a{
-                color: white;
-                height: calc(100% / 4);
-                width: 90%;
-                margin: 0 auto;
-                border-radius: 15px;
-                padding: 20px;
-                @include flex(center,start,row,5px);
-                font-size: 1.3rem;
-                i{
-                    width: 30px;
-                    @include flex(center,center,row,0);
-                }
-            }
-            a:hover{
-                background-color: $blackhover;
-            }
-        }
-    }
+
     main{
         background-color: $main;
-        grid-column: 2;
         @include flex(center,center,row,0);
         height: 100%;
+        grid-column: 2;
         .container{
             background-color: white;
             min-width: 90%;
@@ -91,3 +49,16 @@
         }
     }
 }   
+
+@media only screen and (max-width:1000px){
+    .adminpage{
+        grid-template-columns: 1fr;
+        main{
+            height: 150vh;
+            grid-column: 1;
+        }
+    }
+    .sidebar{
+        
+    }
+}

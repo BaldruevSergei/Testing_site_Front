@@ -3,60 +3,9 @@
 .teacherpage{
     @include grid(1fr, 250px 1fr, start, start);
     min-height: 100vh;
-    .sidebar{
-        position: fixed;
-        @include size(100vh,250px,$black,white);
-        left: 0;
-        .Logo{
-            width: 100%;
-            min-height: 150px;
-            height: auto;
-            a{
-            font-size: 2rem;
-            color: white;
-            height: 70px;
-            @include flex(center,center,row,0);
-            }
-            .name{
-                width: 90%;
-                margin: 0 auto;
-                @include flex(center,start,column,5px);
-                font-size: 1.2rem;
-                color: $main;
-                text-align: center;
-                div{
-                    color: white;
-                    font-family: sans-serif;
-                    font-weight: bold;
-                }
-            }
-        }
-        ul{
-            height: 200px;
-            @include flex(start,start,column,0);
-            width: 100%;
-            a{
-                color: white;
-                height: calc(100% / 4);
-                width: 90%;
-                margin: 0 auto;
-                border-radius: 15px;
-                padding: 20px;
-                @include flex(center,start,row,5px);
-                font-size: 1.3rem;
-                i{
-                    width: 30px;
-                    @include flex(center,center,row,0);
-                }
-            }
-            a:hover{
-                background-color: $blackhover;
-            }
-        }
-    }
     main{
-        background-color: $main;
         grid-column: 2;
+        background-color: $main;
         @include flex(center,center,row,0);
         height: 100%;
         .container{
@@ -99,3 +48,13 @@
         }
     }
 }   
+
+@media only screen and (max-width:1000px){
+    .teacherpage{
+        grid-template-columns: 1fr;
+        main{
+            height: 150vh;
+            grid-column: 1;
+        }
+    }
+}

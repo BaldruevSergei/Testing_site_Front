@@ -1,5 +1,5 @@
 import './adminpage.scss';
-import Sidebar from './sidebar';
+import SideBar from '../sidebar/sidebar';
 import {UserContext} from '../../App'
 import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -14,8 +14,30 @@ export default function AdminPage(){
     if(accountType !== 'admin'){
         return <NoAccess/>
     }
+    const links = [
+        {
+            title: 'Все тесты',
+            func: '',
+            icon: 'fa fa-book',
+        },
+        {
+            title: 'Все ученики',
+            func: '',
+            icon: 'fas fa-book-reader'
+        },
+        {
+            title: 'Все учители',
+            func: '',
+            icon: 'fas fa-chalkboard-teacher'
+        },
+        {
+            title: 'Все классы',
+            func: '',
+            icon: 'fa fa-database'
+        }
+    ]
     return <div className="adminpage">
-        <Sidebar/>
+        <SideBar Links={links}/>
         <main>
             <div className="container">
                 <div className="search">
