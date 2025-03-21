@@ -28,7 +28,7 @@ export default function AdminPage(){
         {
             title: 'Все учители',
             func: '',
-            icon: 'fas fa-book-reader'
+            icon: 'fas fa-chalkboard-teacher'
         },
         {
             title: 'Все классы',
