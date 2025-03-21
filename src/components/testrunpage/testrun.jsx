@@ -10,20 +10,12 @@ export default function TestRun(){
     const {id} = useParams();
     const [test, setTest] = useState({});
     const [currentQuestion, setQuestion] = useState(0);
-    const [title, setTitle] = useState('')
     useEffect(() => {
         setTest(Tests.find((test) => test.id === parseInt(id)));
     },[id])
     return (<>
         {test.questions && test.questions.length > 0 && (
         <div className="testrun">
-<<<<<<< HEAD
-            <main>
-                <div className='topic'>Рабочая панель <span>/</span> <Link>{test.topic}</Link></div>
-                <h1>{currentQuestion + 1}.{title}</h1>
-                <div className="container">
-
-=======
         <main>
             <section>
             <div className='topic'>Рабочая панель <span>/</span> <Link to={`/TestLibrary/TestPreview/${id}`}>{test.topic}</Link></div>
@@ -33,7 +25,6 @@ export default function TestRun(){
             <div className='questionContainer'>
                 <div className='question'  onMouseDown={(e) => e.preventDefault()}>
                     {test.questions[currentQuestion].question}
->>>>>>> 105d8062333b490ad982dc7be2424f6ffedb166c
                 </div>
                 <div className='answer'>
                     {test.questions[currentQuestion].type === 'input' && (
