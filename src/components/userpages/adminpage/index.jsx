@@ -1,12 +1,15 @@
 import './adminpage.scss';
-import SideBar from '../sidebar/sidebar';
-import {UserContext} from '../../App'
-import { useContext } from 'react';
+import SideBar from '../../sidebar/sidebar';
+import {UserContext} from '../../../App'
+import { useContext , useEffect, useState} from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import NoAccess from '../noaccesspage';
+import NoAccess from '../../noaccesspage';
+import Main from '../main'
 export default function AdminPage(){
     const {isLoggedIn, accountType} = useContext(UserContext)
     const location = useLocation();
+    const [currentLink, setCurrentLink] = useState(0);
+
 
     if (!isLoggedIn) {
         return <Navigate to="/Auth/AuthLinks" state={{ from: location }} />;
@@ -14,40 +17,37 @@ export default function AdminPage(){
     if(accountType !== 'admin'){
         return <NoAccess/>
     }
+
     const links = [
         {
             title: 'Все тесты',
-            func: '',
+            func: () => setCurrentLink(0),
             icon: 'fa fa-book',
+  
         },
         {
             title: 'Все ученики',
-            func: '',
-            icon: 'fas fa-book-reader'
+            func: () => setCurrentLink(1),
+            icon: 'fas fa-book-reader',
+     
         },
         {
             title: 'Все учители',
-            func: '',
-            icon: 'fas fa-chalkboard-teacher'
+            func: () => setCurrentLink(2),
+            icon: 'fas fa-chalkboard-teacher',
+            
         },
         {
             title: 'Все классы',
-            func: '',
-            icon: 'fa fa-database'
+            func: () => setCurrentLink(3),
+            icon: 'fa fa-database',
+           
         }
     ]
+
+
     return <div className="adminpage">
         <SideBar Links={links}/>
-        <main>
-            <div className="container">
-                <div className="search">
-                    <input type="search" placeholder='Search by ID/Name'/>
-                    <button>Search</button>
-                </div>
-                <div className='results'>
-                    
-                </div>
-            </div>
-        </main>
+        <Main links={links} currentLink={currentLink}/>
     </div>
 }

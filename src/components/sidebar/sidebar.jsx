@@ -9,7 +9,7 @@ export default function SideBar(props){
     return (
         <nav className="sidebar" style={{justifyContent: !menu ? 'space-between' : 'flex-end'}}>
             {!menu ? (<Link to='/' className='logo'><i className='fas fa-graduation-cap'></i>EduTest</Link>) : ''}
-            <i className={`fa fa-${!menu ? 'bars' : 'close1'}`} id='toggleMenu' onClick={() => setMenu(!menu)}></i>
+            <i className={`fa fa-${!menu ? 'bars' : 'close'}`} id='toggleMenu' onClick={() => setMenu(!menu)}></i>
             <div className='container' style={{minHeight: menu ? '300px' : '0', height: menu ? 'auto' : '0'}}>
             <Link className='back' to='/'><i className='fas fa-graduation-cap'></i>EduTest</Link>
             <div className='profile'>

@@ -1,26 +1,28 @@
 
-import './teacherpage.scss';
-import { UserContext } from '../../App';
+import '../page.scss';
+import { UserContext } from '../../../App';
 import { useLocation, Navigate } from 'react-router-dom';
-import { useContext } from 'react';
-import NoAccess from '../noaccesspage';
-import Sidebar from '../sidebar/sidebar'
+import { useContext , useState} from 'react';
+import NoAccess from '../../noaccesspage';
+import Sidebar from '../../sidebar/sidebar'
+import Main from '../main';
 export default function TeacherPage(){
     const location = useLocation();
+    const [currentLink, setCurrentLink] = useState(0);
     const links = [
         {
             title: 'Мои тесты',
-            func: '',
+            func: () => setCurrentLink(0),
             icon: 'fa fa-book',
         },
         {
             title: 'Мои ученики',
-            func: '',
+            func: () => setCurrentLink(1),
             icon: 'fas fa-book-reader'
         },
         {
             title: 'Мои классы',
-            func: '',
+            func: () => setCurrentLink(2),
             icon: 'fa fa-database'
         }
     ]
@@ -33,13 +35,6 @@ export default function TeacherPage(){
     }
     return <div className="teacherpage">
         <Sidebar Links={links}/>
-        <main>
-            <div className="container">
-                <div className="search">
-                    <input type="search" placeholder='Search By ID/Name'/>
-                    <button>Найти</button>
-                </div>
-            </div>
-        </main>
+        <Main links={links} currentLink={currentLink}/>
     </div>
 }
