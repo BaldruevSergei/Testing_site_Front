@@ -1,4 +1,4 @@
-import './adminpage.scss';
+import '../page.scss';
 import SideBar from '../../sidebar/sidebar';
 import {UserContext} from '../../../App'
 import { useContext , useEffect, useState} from 'react';
@@ -46,7 +46,7 @@ export default function AdminPage(){
     ]
 
 
-    return <div className="adminpage">
+    return <div className="adminpage page">
         <SideBar Links={links}/>
         <Main links={links} currentLink={currentLink}/>
     </div>

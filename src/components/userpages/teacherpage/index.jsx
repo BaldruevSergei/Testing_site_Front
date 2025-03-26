@@ -33,7 +33,7 @@ export default function TeacherPage(){
     if(accountType !== 'teacher'){
         return <NoAccess/>
     }
-    return <div className="teacherpage">
+    return <div className="teacherpage page">
         <Sidebar Links={links}/>
         <Main links={links} currentLink={currentLink}/>
     </div>
