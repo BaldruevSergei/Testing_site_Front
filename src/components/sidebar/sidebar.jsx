@@ -25,7 +25,7 @@ export default function SideBar(props){
             <ul>
                {props.Links.map(({title,func,icon},index) => (
                 <>
-                <span onClick={func}><i className={`${icon}`}></i>{title}</span>
+                <span onClick={func} key={index}><i className={`${icon}`}></i>{title}</span>
                 </>
                ))}
             </ul>
