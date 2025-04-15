@@ -4,7 +4,7 @@
     min-height: 100vh;
     width: 100vw;
     overflow-x: hidden;
-    @include grid(1fr, 1fr 200px, start, start);
+    @include grid(1fr, 200px 1fr, start, start);
     position: relative;
     background-color: $hover;
     
@@ -13,7 +13,7 @@
         overflow-x: hidden;
         @include size(auto,auto,$hover,black);
         @include flex(start,center,row,0);
-        grid-column: span 1;
+        grid-column: 2;
         section{
             padding-top: 25px;
             width: 70%;
@@ -164,6 +164,7 @@
 
 @media only screen and (max-width:800px){
     main{
+        grid-column: 1;
         section{
             width: 100%;
             @include flex(center,center,column,0);

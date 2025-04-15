@@ -5,7 +5,7 @@ import { UserContext } from '../../App';
 import { Link, useLocation , Navigate} from 'react-router-dom';
 import newTests from './notes';
 import Oros3 from '../../assets/oros3logo.png'
-
+import SideBar from '../sidebar/sidebar';
 export default function TestLibrary(){
     const [activeTab, setActiveTab] = useState(0);
     const tabs = ['Новые тесты','Пройденные тесты'];
@@ -13,6 +13,18 @@ export default function TestLibrary(){
     const [lastItem, setItem] = useState(12);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const { isLoggedIn, accountType } = useContext(UserContext);
+    const links = [
+        {
+            title: 'Все тесты',
+            icon: 'fas fa-book-open',
+            func: '',
+        },
+        {
+            title: 'Мой класс',
+            func: '',
+            icon: 'fas fa-users'
+        }
+    ]
     // THESE TESTS ARE JUST DUMMIES 
     // USE SHIFT OR PUSH TO ADD NEW TESTS NOT PUSH, IF ITS PUSH REVERSE THE ARRAY SO THE RECENT ONES COME FROM THE TOP
     const previousTests = [
@@ -45,7 +57,7 @@ export default function TestLibrary(){
 
     return <>
     <div className='testlibrary'>
-    <Header/>
+    <SideBar Links={links}/>
     <main>
      <div className="container">
         <div className="tabs">

@@ -32,7 +32,7 @@ export default function Sidebar(props){
         clearInterval(interval)
     }
     
-    return <nav className='sidebar'>
+    return <nav className='testSidebar'>
         <div className='back'><Link to={!testList ?`/TestLibrary/TestPreview/${id}` : ''} onClick={testList ? () => setList(!testList) : null}><i className="fa fa-angle-left"></i>{testList ? 'Назад' : 'Выйти'}</Link></div>
         <div className="time">
         <i class='far fa-clock'></i>

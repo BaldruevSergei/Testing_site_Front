@@ -8,13 +8,14 @@ import TestLibrary from './components/testlibrarypage';
 import TestRun from './components/testrunpage/testrun';
 import TestPreview from './components/testpreview';
 import Contacts from './components/contactspage'
-import AdminPage from './components/adminpage';
-import TeacherPage from './components/teacherpage';
+import AdminPage from './components/userpages/adminpage';
+import TeacherPage from './components/userpages/teacherpage';
 const UserContext = createContext();
 
 function App() {
   const [isLoggedIn, setLogged] = useState(true); 
   const [accountType, setType] = useState('') 
+  // FOR TESTING, CHANGE THE TYPE TO EITHER teacher, student, admin TO SEE THE CHANGES BETWEEN COMPONENTS ALSO CHANGE LOGGED IN TO SEE THE REQUIREMENT FOR LOGGING IN
   useEffect(() => {
     setType('student');
   },[accountType])
