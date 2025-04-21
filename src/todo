@@ -1,0 +1,30 @@
+1. adminpage
+    * All tests
+    * All teachers
+    * All students
+    * All classes
+    * Delete functions
+    * Add functions 
+    * Custom test previews with correct answers 
+    * Make all of them responsive for phone
+
+
+2. teacherspage
+    * My tests
+    * My students
+    * My classes
+    * Delete functions
+    * Add functions 
+    * Custom test previews with correct answers 
+    * Make all of them responsive for phone
+    
+
+3. contactspage
+    * Link to contact and portfolio
+    * Make all of them responsive for phone
+
+    
+4. resultspage
+    * At the end of test run
+    * When clicked on previoustests
+    * Make all of them responsive for phone

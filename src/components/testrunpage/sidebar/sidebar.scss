@@ -1,0 +1,95 @@
+@use '../../mixins.scss' as *;
+$questionColor: rgb(146, 146, 146);
+
+.testSidebar{
+    @include size(100vh,200px,$white,black);
+    @include flex(start,start,column,0);
+    left: 0;
+    position: fixed;
+    grid-column: 1;
+    .back{
+        width: 100%;
+        background-color: $button;
+        height: 40px;
+        @include flex(center,start,row,0);
+        padding-left: 15px;
+        a{
+            color: white;
+            font-size: 1.4rem;
+            @include flex(center,start,row,5px);
+        }
+    }
+    .time{
+        min-height: 80px;
+        @include flex(center,center,row,5px);
+        width: 100%;
+        font-size: 2rem;
+    }
+    .questionsContainer{
+        padding-left: 15px;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .questions{
+            width: 100%;
+            @include flex(start,start,row,5px);
+            flex-wrap: wrap;
+            li{
+                font-size: 1.5rem;
+                min-height: 40px;
+                list-style: none;
+                min-width: 40px;
+                background-color: $questionColor;
+                color: $white;
+                @include flex(center,center,row,0);
+                cursor: pointer;
+                &:hover {
+                    span {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+    .questionList{
+        margin-top: auto;
+        height: 50px;
+        @include flex(center,center,row,0);
+        width: 100%;
+        color: $button;
+        font-size: 1.3rem;
+        span{
+            position: relative;
+        }
+        span:after{
+            content: '';
+            background-color: $button;
+            width: 100%;
+            position: absolute;
+            height: 1px;
+            top: 100%;
+            left: 0;
+        }
+    }
+}
+
+
+@media only screen and (max-width:625px){
+    .testSidebar{
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        height: auto;
+        bottom: 0;
+        position: relative;
+    }
+}

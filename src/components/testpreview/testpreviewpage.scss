@@ -1,0 +1,91 @@
+@use '../mixins.scss' as *;
+.testpreview{
+    background-color: $hover;
+    height: 100vh;
+    @include grid(80px auto, initial, start, start);
+    Header{
+        position: relative;
+        grid-area: 1;
+    }
+    main{
+        width: 100vw;
+        min-height: $mainMinHeight;
+        grid-area: 2;
+        @include flex(center,center,row,0);
+        .container{
+            background-color: $white;
+            min-width: 55%;
+            width: auto;
+            min-height: calc($mainMinHeight - $mainMinHeight / 2 + 50px);
+            height: auto;
+        .back{
+            border-bottom: 2px solid;
+            display: block;
+            background-color: $button;
+            color: white;
+            i{
+                padding-left: 10px;
+                min-height: 40px;
+                font-size: 1.4rem;
+                display: inline-flex;
+                gap: 10px;
+                cursor: pointer;
+                position: relative;
+                align-items: center;
+            }
+        }
+            h1{
+                @include flex(center,center,row,0);
+                font-weight: 500;
+                padding-left: 15px;
+                padding-right: 15px;
+                text-align: center;
+            }
+
+            .information{
+                padding: 20px;
+                font-size: 1.3rem;
+                div{
+                    min-height: 40px;
+                }
+            }
+            .start{
+                padding: 20px;
+                @include flex(center,center,row,0);
+                min-height: 20px;
+                a{
+                    font-size: 1.3rem;
+                    @include size(40px,120px,$button,white);
+                    @include flex(center,center,row,0);
+                    border-radius: 15px;
+                }
+                a:hover{
+                    background-color: $buttonhover;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:500px){
+    
+    .testpreview{
+        display: initial;
+        .back{
+            @include flex(center,start,row,0);
+            i{
+                height: 50px;
+            }
+        }
+        main{
+            .container{
+                min-height: $mainMinHeight;
+                width: 100%;
+                .information{
+                    padding: 5px;
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+}

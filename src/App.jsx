@@ -1,46 +1,43 @@
-import './App.css'
-import Header from './components/header'
-import introEducation from './assets/education.png'
-import Footer from './components/footer'
-import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
-import LoginPage from './pages/loginpage';
+import { createContext, useEffect, useState } from 'react';
+import Homepage from './components/homepage'
+import './App.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AuthPage from './components/auth/authpage';
+import ErrorPage from './components/errorpage';
+import TestLibrary from './components/testlibrarypage';
+import TestRun from './components/testrunpage/testrun';
+import TestPreview from './components/testpreview';
+import Contacts from './components/contactspage'
+import AdminPage from './components/userpages/adminpage';
+import TeacherPage from './components/userpages/teacherpage';
+const UserContext = createContext();
+
 function App() {
+  const [isLoggedIn, setLogged] = useState(true); 
+  const [accountType, setType] = useState('') 
+  // FOR TESTING, CHANGE THE TYPE TO EITHER teacher, student, admin TO SEE THE CHANGES BETWEEN COMPONENTS ALSO CHANGE LOGGED IN TO SEE THE REQUIREMENT FOR LOGGING IN
+  useEffect(() => {
+    setType('student');
+  },[accountType])
 
   return (
-    <>
-    <BrowserRouter>
-      <div className="body">
-          <Header/>
-              <Routes>
-                <Route path='/' element={
-                  <div className="main">
-                  <section> 
-                    <div className="intro">
-                      <div className="empty"></div>
-                      <div className="intro-container">
-                         <div className="intro-text">
-                         <h1>Обучение и оценки</h1>
-                         <p>
-                         Сдайте свой экзамен здесь проще и удобнее</p>
-                         <button>Сдать экзамен</button>
-                         </div>
-                      <div className="intro-design">
-                        <img src={introEducation}/>
-                      </div>
-                      </div>
-                    </div>
-                    <div className="about">
-                    </div>
-                   </section>
-                   </div>
-                }/>
-                   <Route path='/LoginPage' element={<LoginPage/>}></Route>
-                  </Routes>
-            <Footer/>
-      </div>
+    <UserContext.Provider value={{ isLoggedIn, accountType , setLogged}} >
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/Auth/:id' element={<AuthPage />} />
+          <Route path='*' element={<ErrorPage />} />
+          <Route path='/TestLibrary' element={<TestLibrary />} />
+          <Route path='/TestLibrary/TestRun/:id' element={<TestRun />} />
+          <Route path='/TestLibrary/TestPreview/:id' element={<TestPreview />} />
+          <Route path='/Contacts' element={<Contacts />} />
+          <Route path='/AdminControls' element={<AdminPage/>} />
+          <Route path='/TeacherControls' element={<TeacherPage/>}></Route>
+        </Routes>
       </BrowserRouter>
-    </>
-  )
+    </UserContext.Provider>
+  );
 }
+export default App;
 
-export default App
+export { UserContext };

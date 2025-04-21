@@ -1,0 +1,213 @@
+@use '../mixins' as *;
+.homepage{
+     @include size(auto,100%,white,black);
+     @include grid(auto auto auto, 1fr, start,start);
+     overflow-x: hidden;
+     grid-template-areas: "header"
+                          "main"
+                          "footer";
+          
+     main{
+          grid-area: main;
+          @include size(auto, 100%, white, black);
+          
+          nav{
+               @include size(100vh, 100%, white, black);
+               background-repeat: no-repeat;
+               background-size: cover;
+               @include flex(center,center,column,0);
+
+               div{
+                    height: 60%;
+                    text-align: center;
+                    
+                    .banner{
+                         @include size(auto,350px,#dce4ee,$button);
+                         font-size: 1.3rem;
+                         margin: 0 auto;
+                         border-radius: 25px;
+                         text-align: center;
+                         padding: 5px;
+                         position: relative;
+                         bottom: 25px;
+                    }
+                    
+                    p{
+                         font-size: 1.4rem;
+                         color: gray;
+                         width: 60%;
+                         margin: 0 auto;
+                    }
+
+                    h1{
+                         font-size: 4rem;
+                         font-family: sans-serif;
+                         width: 100%;
+                         margin: 0 auto;
+                    }
+
+                    form{
+                         @include flex(center,center,row,15px);
+                         padding: 50px;
+                         a{
+                              @include size(auto,auto,'','');
+                              text-align: center;
+                              font-size: 2rem;
+                              padding: 15px;
+                              box-shadow: 0 0 5px #00000014, 0 1px 4px #0000001f;
+                              border-radius: 15px;
+                              min-width: 140px;
+                              background-color: $button;
+                              color: white;
+                              &:nth-of-type(1):hover {
+                                   background-color: #1a53cf;
+                              }
+                         }
+                    }
+
+                    .contributors{
+                         width: 100%;
+                         height: 100px;
+                         @include flex(center,center,row,15px);
+                         img{
+                              
+                               filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+                         }
+                         i{
+                              font-size: 3rem;
+                              color: rgb(182, 178, 178);
+                         }
+                    }
+
+               }
+
+          }
+
+          .features{
+               @include size(auto, 100%, #f0eeee, black);
+               min-height: 100vh;
+               @include flex(center,center,row,0);
+               div{
+                    height: auto;
+                    width: 60%;
+                    min-width: 50%;
+                    min-height: 50%;
+                    @include grid(1fr, 1fr 1fr, start, start);
+                    ul{
+                         list-style: none;
+                         @include flex(start,start,column,20px);
+                         li{
+                              cursor: pointer;
+                              @include flex(center,start,row,50px);
+                              .progressBar{
+                                   @include size(50,3px,#b6d8ff,black);
+                                   border-radius: 15px;
+                                   min-width: initial;
+                                   .progress{
+                                        @include size(0,3px,#1a53cf,black);
+                                        min-height: 0;
+                                        
+                                   }
+                              }
+                              span{
+                                   font-size: 2rem;
+                                   font-family: sans-serif ;
+                                   p{
+                                        font-size: 1rem;
+                                        font-family: serif;
+                                        width: 50%;
+                                   }
+                              }
+                         }
+                    }
+                    div{
+                         @include size(100%,90%,initial,black);
+                         @include flex(center,start,column,0);
+                         text-align: center;
+                         font-size: 1.4rem;
+                         img{
+                              width: 700px;
+                              height: 100%;
+                              border: 1px solid;
+                         }
+                    }
+               }
+          }          
+     }
+}
+@media only screen and (max-width:1440px){
+     .homepage{
+          main{
+               nav{
+                    div{
+                         p{
+                              width: 80%;
+                         }
+                    }
+               }
+               .features{
+                    div{
+                         width: 95%;
+                    }
+               }
+          }
+     }
+}
+@media only screen and (max-width:945px){
+     .homepage{
+          main{
+               .features{
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                    div{
+                         grid-template-rows: 1fr 1fr;
+                         grid-template-columns: initial;
+                         gap: 50px;
+                         div{
+                              width: 100%;
+                              img{
+                                   margin: 0 auto;
+                                   min-width: 0;
+                                   width: 95%;
+                              }
+                         }
+                    }
+               }
+          }
+     }
+}
+@media only screen and (max-width:513px){
+     .homepage{
+          main{
+               nav{
+                    width: 95vw;
+             
+               div{
+                    text-wrap: balance;
+                    .banner{
+                         width: 260px;
+                         font-size: 1rem;
+                    }
+                    h1{
+                         font-size: 10vw;
+                         
+                     
+                    }
+                    p{
+                         font-size: 4vw;
+                    }
+                    form{
+                         a{
+                              font-size: 1.3rem;
+                              min-width: 100px;
+                              &:nth-of-type(2){
+                                   height: 55px;
+                                   @include flex(center,center,row,0);
+                              }
+                         }     
+                    }
+               }
+          }
+          }
+     }
+}

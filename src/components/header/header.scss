@@ -1,0 +1,260 @@
+@use '../mixins.scss' as *;
+
+header{
+     grid-area: header;
+     z-index: 999;
+     @include grid(1fr, 25% 1fr, start,start);
+     width: 80%;
+     @include size(60px,80%,$white,black);
+     box-shadow: 0 5px 10px #00000014, 0 5px 4px #0000001f;
+     top: 10px;
+     right: 0;
+     left: 0;
+     margin: 0 auto;
+     position: fixed;
+     border-radius: 120px;
+     
+     .logo{
+          @include size(100%, 80%, "", black);
+          margin: 0 auto;
+          @include flex(center,start,row, 0);
+          @include font(1.8rem,sans-serif,600);
+          cursor:default;
+          #menuBtn{
+               display: none;
+          }
+     }
+
+     .links{
+          @include grid(1fr, 90% 1fr, center, end);
+          width: 95%;
+          margin: 0 auto;
+          gap: 15px;
+          height: 100%;
+          position: relative;
+          z-index: 5;
+          span{
+               @include flex(center, flex-end, row, 25px);
+               @include font(1.2rem, Poppins, regular);
+               
+               a{
+                    @include flex(center,center, row,5px);
+                    position: relative;
+               }
+               a::after{
+                    content: '';
+                    @include size(2px, 0, black, white);
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    transition: width 0.1s ease-in-out;
+               }
+               a:hover::after{
+                    width: 100%;
+               }
+          }
+
+          button{
+               @include size(30px,90px,$button,white);
+               @include border(none, 10px);
+               @include font(1.1rem, Poppins, 100);
+               cursor: pointer;
+               
+          }
+          button:hover{
+               background-color: $buttonhover;
+          }
+          button:active{
+               transform: scale(1.02);
+          }
+          
+          .responsiveMenu{
+               display: none;
+               z-index: 5;
+          }
+          .loginOptions{
+               position: absolute;
+               @include size(0,120px,$white,black);
+               right: 0;
+               top: 95%;
+               transition: all 0.3s ease-in-out;
+               overflow: hidden;
+               border-bottom-left-radius: 15px;
+               box-shadow:  0 5px 5px #00000014, 0 1px 4px #0000001f;
+               border-bottom-right-radius: 15px;
+               @include flex(start,start,column,0);
+               
+               a{
+                    height: calc(100% / 2);
+                    width: 100%;
+                    @include flex(center,center,row,5px);
+               }
+               a:hover{
+                    background-color: $hover;
+               }
+
+          }
+
+          .profile{
+               width: 100%;
+               height: 100%;
+               @include flex(center,center,row,0);
+               position: relative;
+               margin: 0;
+               padding: 0;
+               img{
+                    border: 2px solid rgb(197, 195, 195);
+                    border-radius: 50%;
+                    overflow: hidden;
+                    cursor: pointer;
+                    height: 45px;
+                    width: 50px;
+               }
+               .profileMenu{
+                    z-index: 4;
+                    transition: height 0.4s ease;
+                    position: absolute;
+                    overflow: hidden;
+                    background-color: $white;
+                    top: 100%;
+                    right: 0;
+                    @include grid(1fr 30px 30px, initial, start, start);
+                    box-shadow:  0px 5px 5px #00000014, 0 1px 4px #0000001f;
+                    span{
+                         @include grid(1fr, 130px auto ,start,start);
+                         gap: 0;
+                         grid-row: 1;
+                         height: 100%;
+                         .pfp{
+                              @include flex(center,center,row,0);
+                              height: 100%;
+                              grid-column: 1;
+                              img{
+                                   border: none;
+                                   cursor: default;
+                                   height: 110px;
+                                   border-radius: 0;
+                                   width: 110px;
+                              }
+                         }
+                         .studentinfo{
+                              grid-column: 2;
+                              height: 100%;
+                              width: auto;
+                              li{
+                                   list-style: none;
+                                   height: calc(100% / 4);
+                                   @include flex(center,start,row,5px);
+                                   font-weight: 200;
+                                   font-family: sans-serif;
+                                   div{
+                                        min-width: 150px;
+                                        font-family: serif;
+                                        height: 100%;
+                                        @include flex(center,start,row,0);
+                                        font-size: 1.3rem;
+                                   }
+                              }
+                         }
+                    }
+                    
+                    button{
+                         width: 100%;
+                         border-radius: 0;
+                         height: 100%;
+                         grid-row: 2;
+                    }
+                    button:nth-of-type(2){
+                         grid-row: 3;
+                         background-color: $red;
+                         &:hover{
+                              background-color: red    ;
+                         }
+                    }
+               }
+          }
+
+          @media only screen and (max-width:730px){
+               .profile{
+                    justify-content: flex-end;
+               }
+          }
+     }
+
+}
+@media only screen and (max-width: 950px){
+     header{
+          grid-template-columns: 1px 1fr;
+          .logo{
+               p{
+               display: none;
+               }
+          }
+    
+     }
+}
+@media only screen and (max-width: 730px) {
+     header{
+          top: 0;
+          border:none;
+          border-bottom: 1px solid black;
+          border-radius: initial;
+          position: fixed;
+          grid-template-columns: 60% 1fr;
+          width: 100%;
+          .logo{
+               gap: 15px;
+               
+               #menuBtn{
+                    display: block;
+                    font-size: 2.5rem;
+                    cursor: pointer;
+                  
+               }
+          }
+
+          .links{
+               @include flex(center,end,row, 15px);
+               position: initial;
+               width: 100%;
+               span{
+                    display: none;
+               }
+
+               .responsiveMenu{
+                    @include flex(start,start,column, 0);
+                    @include size(0, 100%, white, black);
+                    position: absolute;
+                    top: 100%;
+                    width: 100%;
+                    overflow: hidden;
+                    transition: all 0.2s linear;
+                    border-bottom: 1px solid black;
+
+                    a{
+                         @include size(calc(100% / 3), 100%,white,black);
+                         @include flex(center, flex-start, row, 5px);
+                         padding: 15px;
+                         @include font(1.2rem, Poppins, regular);
+                    }
+
+                    a:hover{
+                         background-color: $hover;
+                    }
+               }
+          }
+
+     }
+
+}
+@media only screen and (max-width:450px){
+     header{
+          
+          .logo{
+               justify-content: start;
+               p{
+                    display: none;
+               }
+          }
+     }
+}

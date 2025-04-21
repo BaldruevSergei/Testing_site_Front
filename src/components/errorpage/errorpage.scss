@@ -1,0 +1,22 @@
+@use '../mixins.scss' as *;
+
+.ErrorPage {
+    @include size(auto,100%,white,black);
+    @include grid(auto auto auto, 1fr, start,start);
+    overflow-x: hidden;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+    @include size(100vh,100vw,#f5f5f5,black);
+    font-family: 'Roboto', sans-serif;
+    main{
+        height: 80vh;
+        @include flex(center,center,column,0);
+        h1{
+            font-size: 7rem;
+            }
+            p{
+            font-size: 2rem;
+        }
+    }
+}

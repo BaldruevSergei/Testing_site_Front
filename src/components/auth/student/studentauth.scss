@@ -1,0 +1,178 @@
+@use '../../mixins.scss' as *;
+
+.StudentAuth{
+     @include size(auto,auto,$white,black);
+     min-height: 400px;
+     min-width: 450px;
+     text-align: center;
+     border-radius: 15px;
+     padding: 20px;
+     @include flex(center,start,column,15px);
+     h1{
+      font-family: sans-serif;
+     }
+     p{
+      font-size: 1.2rem;
+     }
+     .inputs{
+          @include flex(start,start,column,30px);
+          width: 90%;
+          span{
+             @include size(50px,100%,$white,gray);  
+             @include flex(center,start,row,0);
+             box-shadow: 0px 3px 0px gray;
+             input{
+               border: none;
+               width: 90%;
+               height: 100%;
+               background-color: $white;
+               outline: none;
+               font-size: 1.3rem;
+             }
+             &:focus-within{
+               box-shadow: 0px 3px 0px $button;
+               color: $button;
+               
+             }
+             i{
+               min-width: 10%;
+               font-size: 1.3rem;
+             }
+             #eye{
+               cursor: pointer;
+             }
+          }  
+     }
+     button{
+      @include size(50px,90%,$button,white);
+      cursor: pointer;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 10px;
+     }
+     button:hover{
+      background-color: #0845c9;
+     }
+     .checkbox{
+        @include flex(center,space-between,row,0);
+        width: 90%;
+        a{
+            text-decoration: underline;
+        }
+        span{
+            @include flex(center,initial,row,5px);
+            cursor: pointer;
+        }
+     }
+     .noAccount{
+        font-size: 1.2rem;
+        a{
+            color: $button;
+            text-decoration: underline;
+        }
+     }
+     .Warning{
+      color: red;
+      font-size: 1.2rem;
+    }
+}
+
+
+.StudentAuthSignUp{
+    @include size(auto,auto,$white,black);
+    position: relative;
+    top: 50px;
+    min-height: 600px;
+    min-width: 550px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px;
+    @include flex(center,start,column,15px);
+    h1{
+     font-family: sans-serif;
+    }
+    p{
+     font-size: 1.2rem;
+    }
+    .inputs{
+         @include flex(start,start,column,30px);
+         width: 90%;
+         span{
+            @include size(50px,100%,$white,gray);  
+            @include flex(center,start,row,0);
+            box-shadow: 0px 3px 0px gray;
+            input{
+              border: none;
+              width: 90%;
+              height: 100%;
+              background-color: $white;
+              outline: none;
+              font-size: 1.3rem;
+            }
+            &:focus-within{
+              box-shadow: 0px 3px 0px $button;
+              color: $button;
+              
+            }
+            i{
+              min-width: 10%;
+              font-size: 1.3rem;
+            }
+            #eye{
+              cursor: pointer;
+            }
+         }  
+    }
+    button{
+     @include size(50px,90%,$button,white);
+     cursor: pointer;
+     border: none;
+     font-size: 1.2rem;
+     border-radius: 10px;
+     padding: 15px;
+    }
+    button:hover{
+     background-color: #0845c9;
+    }
+    .login{
+       font-size: 1.2rem;
+       a{
+           color: $button;
+           text-decoration: underline;
+       }
+    }
+    select{
+      border: none;
+      text-align: center;
+      border: 1px solid;
+      outline: none;
+      height: 30px;
+    }
+    .Warning{
+      color: red;
+      font-size: 1.2rem;
+    }
+    .classes{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      
+    }
+}
+
+@media only screen and (max-width:1170px ){
+  .StudentAuthSignUp{
+    .classes{
+      flex-direction: column;
+    }
+  }
+}
+@media only screen and (max-width:570px){
+  .StudentAuth{
+    min-width: 90%;
+  
+  }
+  .StudentAuthSignUp{
+    min-width: 90%;
+  }
+}
