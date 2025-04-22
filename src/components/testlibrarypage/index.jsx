@@ -6,6 +6,7 @@ import { Link, useLocation , Navigate} from 'react-router-dom';
 import newTests from './notes';
 import Oros3 from '../../assets/oros3logo.png'
 import SideBar from '../sidebar/sidebar';
+import NoAccess from '../noaccesspage';
 export default function TestLibrary(){
     const [activeTab, setActiveTab] = useState(0);
     const tabs = ['Новые тесты','Пройденные тесты'];
@@ -53,6 +54,9 @@ export default function TestLibrary(){
     }
     if(accountType === 'teacher'){
         return <Navigate to='/TeacherControls' state={{from: location}}/>
+    }
+    if(accountType !== 'student'){
+        return <NoAccess/>
     }
 
     return <>
