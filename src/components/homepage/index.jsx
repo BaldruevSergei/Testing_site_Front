@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Oros3Logo from '../../assets/oros3.svg';
 import { useEffect, useState } from 'react';
 import TestWork from '../../assets/testworkpage.png'
+import Acctestchange from '../acctestchange';
 
 export default function Homepage(){
      return <div className='homepage' >
@@ -58,6 +59,7 @@ function Main(){
 
      return <>
      <main>
+          <Acctestchange/>
           <nav>
                <div>
                     <div className='banner'>👋Легкий доступ для учителей.</div>
