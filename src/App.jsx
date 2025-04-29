@@ -8,20 +8,18 @@ import TestLibrary from './components/testlibrarypage';
 import TestRun from './components/testrunpage/testrun';
 import TestPreview from './components/testpreview';
 import Contacts from './components/contactspage'
-import AdminPage from './components/adminpage';
-import TeacherPage from './components/teacherpage';
+import AdminPage from './components/userpages/adminpage';
+import TeacherPage from './components/userpages/teacherpage';
 const UserContext = createContext();
 
 function App() {
-  const [isLoggedIn, setLogged] = useState(true); 
+  const [isLoggedIn, setLogged] = useState(false); 
   const [accountType, setType] = useState('') 
   // FOR TESTING, CHANGE THE TYPE TO EITHER teacher, student, admin TO SEE THE CHANGES BETWEEN COMPONENTS ALSO CHANGE LOGGED IN TO SEE THE REQUIREMENT FOR LOGGING IN
-  useEffect(() => {
-    setType('teacher');
-  },[accountType])
+
 
   return (
-    <UserContext.Provider value={{ isLoggedIn, accountType , setLogged}} >
+    <UserContext.Provider value={{ isLoggedIn, accountType , setLogged, setType, accountType, setLogged}} >
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepage />} />
