@@ -1,25 +1,82 @@
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './studentauth.scss';
-import { Link } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-export default function StudentLogin(){
+function StudentLogin() {
     const [visible, setVisible] = useState(false);
-    return <>
-     <form className="StudentAuth" onSubmit={(e) => e.preventDefault()}>
-        <h1>Вход Студента</h1>
-        <p>Привет, с возвращением! 👋</p>
-        <div className='inputs'>
-        <span>
-        <i className='fas fa-user-alt'></i>
-        <input type="text" placeholder='Имя' required/></span>
-        <span>
-        <i className='fas fa-lock'></i>
-            <input type={visible ? "text" : "password"} placeholder='Пароль' required/><i className={`fa fa-eye${visible ? "-slash" : ''}`} id='eye' onClick={() => setVisible(!visible)}></i></span>
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
+    const [warning, setWarning] = useState('');
+    const navigate = useNavigate();
+
+    const handleLogin = async () => {
+        if (!login || !password) {
+            setWarning("Заполните логин и пароль");
+            return;
+        }
+
+        try {
+            const response = await fetch("https://ee13-112-72-13-26.ngrok-free.app/api/auth/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "ngrok-skip-browser-warning": "true"
+                },
+                body: JSON.stringify({ login, password })
+            });
+
+            const text = await response.text();
+            if (!response.ok) {
+                setWarning(text);
+            } else {
+                const [, studentId, studentName] = text.split(":");
+                localStorage.setItem("studentId", studentId);
+                localStorage.setItem("studentName", studentName);
+                setWarning('');
+                navigate("/student-dashboard");
+            }
+        } catch (error) {
+            console.error("Ошибка при подключении к серверу:", error);
+            setWarning("Ошибка подключения к серверу");
+        }
+    };
+
+    return (
+        <div className='mainContainer'>
+            <div className='container'>
+                <div className="header">
+                    <div className="text">Вход ученика</div>
+                    <div className="underline"></div>
+                </div>
+                <div className="inputs">
+                    <div className="input">
+                        <input
+                            type="text"
+                            placeholder='Логин'
+                            value={login}
+                            onChange={(e) => setLogin(e.target.value)}
+                        />
+                    </div>
+                    <div className="input">
+                        <input
+                            type={visible ? "text" : "password"}
+                            placeholder='Пароль'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <span className="password-toggle" onClick={() => setVisible(!visible)}>
+                            {visible ? <FaEyeSlash /> : <FaEye />}
+                        </span>
+                    </div>
+                </div>
+                {warning && <div className="warning">{warning}</div>}
+                <div className="submit-container">
+                    <button className="submit" onClick={handleLogin}>Войти</button>
+                </div>
+            </div>
         </div>
-        <button>Войти</button>
-        <span className="Warning"></span>
-        <span className='checkbox'><span><input type='checkbox' id='remember'/><label for="remember">Запомнить меня</label></span> <Link>Забыли пароль?</Link></span>
-        <span className='noAccount'>Нет аккаунта? <Link to='/Auth/StudentSignUp'>Регистрация</Link></span>
-    </form>
-    </>
+    );
 }
+
+export default StudentLogin;
