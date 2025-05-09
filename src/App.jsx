@@ -19,8 +19,8 @@ function App() {
 
 
   return (
-    <UserContext.Provider value={{ isLoggedIn, accountType , setLogged, setType, accountType, setLogged}} >
-      <BrowserRouter>
+      <UserContext.Provider value={{ isLoggedIn, accountType, setLogged, setType }}>
+     <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepage />} />
           <Route path='/Auth/:id' element={<AuthPage />} />
