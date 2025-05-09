@@ -47,3 +47,6 @@ export const createExam = (examData) => API.post('/api/exams', examData);
 // --- CLASSES ---
 export const getClasses = () => API.get('/api/classes');
 export const createClass = (classData) => API.post('/api/classes', classData);
+
+// --- Auth ---
+export const authLogin = (studentInfo) => API.post('/api/auth/login', studentInfo);

@@ -10,6 +10,7 @@ import TestPreview from './components/testpreview';
 import Contacts from './components/contactspage'
 import AdminPage from './components/userpages/adminpage';
 import TeacherPage from './components/userpages/teacherpage';
+import { authLogin, getStudents } from './api/services';
 const UserContext = createContext();
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   const [accountType, setType] = useState('') 
   // FOR TESTING, CHANGE THE TYPE TO EITHER teacher, student, admin TO SEE THE CHANGES BETWEEN COMPONENTS ALSO CHANGE LOGGED IN TO SEE THE REQUIREMENT FOR LOGGING IN
 
-
+  
   return (
       <UserContext.Provider value={{ isLoggedIn, accountType, setLogged, setType }}>
      <BrowserRouter>
