@@ -8,7 +8,7 @@ export default function Main(props){
                 <div className="search">
                     <input type="search" placeholder='Search by Subject/Test/ID/Date...'/>
                     <button>Search</button>
-                    <div className="number">Кол. тестов: <span></span></div>
+                    <div className="number">Кол. {links[currentLink].number}: <span></span></div>
                 </div>
                 <div className='results'>
                     

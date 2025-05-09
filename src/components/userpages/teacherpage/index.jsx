@@ -14,16 +14,19 @@ export default function TeacherPage(){
             title: 'Мои тесты',
             func: () => setCurrentLink(0),
             icon: 'fa fa-book',
+            number: 'тестов'
         },
         {
             title: 'Мои ученики',
             func: () => setCurrentLink(1),
-            icon: 'fas fa-book-reader'
+            icon: 'fas fa-book-reader',
+            number: 'учеников'
         },
         {
             title: 'Мои классы',
             func: () => setCurrentLink(2),
-            icon: 'fa fa-database'
+            icon: 'fa fa-database',
+            number: 'класс'
         }
     ]
     const {isLoggedIn, accountType} = useContext(UserContext);
