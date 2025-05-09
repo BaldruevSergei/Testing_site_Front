@@ -9,7 +9,8 @@
     }
     main{
         width: 100vw;
-        min-height: $mainMinHeight;
+        min-height: calc($mainMinHeight - 100px);
+        background-color: $hover;
         grid-area: 2;
         @include flex(center,center,row,0);
         .container{

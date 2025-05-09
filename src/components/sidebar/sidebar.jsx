@@ -5,7 +5,7 @@ import { useContext, useState } from 'react';
 import { UserContext } from '../../App';
 export default function SideBar(props){
     const [menu, setMenu] = useState(false);
-    const {accountType} = useContext(UserContext)
+    const {accountType, setLogged, setType} = useContext(UserContext)
     return (
         <nav className="sidebar" style={{justifyContent: !menu ? 'space-between' : 'flex-end'}}>
             {!menu ? (<Link to='/' className='logo'><i className='fas fa-graduation-cap'></i>EduTest</Link>) : ''}
@@ -15,10 +15,15 @@ export default function SideBar(props){
             <div className='profile'>
                 <span className='pfp'><img src='' alt="" /><Link>Профиль</Link></span>
                 <span className='info'>
-                    <p>Name</p>
+                    <p>Имя: </p>
                     <p>Роль: {accountType}</p>
                     <div><Link><i className='fas fa-user-circle'></i><span>Мой Профиль</span></Link>
-                    <Link><i className='fas fa-user-alt-slash'></i><span>Выйти</span></Link>
+                    <Link onClick={() => {
+                        if(confirm('Вы уверены, что хотите выйти?') == true){
+                            setLogged(false)
+                            setType(false)
+                        }
+                    }}><i className='fas fa-user-alt-slash'></i><span>Выйти</span></Link>
                     </div>
                 </span>
             </div>

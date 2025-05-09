@@ -16,7 +16,7 @@ export default function TestLibrary(){
     const { isLoggedIn, accountType } = useContext(UserContext);
     const links = [
         {
-            title: 'Все тесты',
+            title: 'Мои тесты',
             icon: 'fas fa-book-open',
             func: '',
         },

@@ -23,24 +23,28 @@ export default function AdminPage(){
             title: 'Все тесты',
             func: () => setCurrentLink(0),
             icon: 'fa fa-book',
+            numberof: 'тест'
   
         },
         {
             title: 'Все ученики',
             func: () => setCurrentLink(1),
             icon: 'fas fa-book-reader',
+            numberof: 'ученик'
      
         },
         {
             title: 'Все учители',
             func: () => setCurrentLink(2),
             icon: 'fas fa-chalkboard-teacher',
+            numberof: 'учитель'
             
         },
         {
             title: 'Все классы',
             func: () => setCurrentLink(3),
             icon: 'fa fa-database',
+            numberof: 'класс'
            
         }
     ]
