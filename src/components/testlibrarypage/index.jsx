@@ -49,13 +49,13 @@ export default function TestLibrary(){
     if (!isLoggedIn) {
         return <Navigate to="/Auth/AuthLinks" state={{ from: location }} />;
     }
-    if(accountType === 'admin'){
+    if(accountType === 'ADMIN'){
         return <Navigate to='/AdminControls' state={{from: location}}/>
     }
-    if(accountType === 'teacher'){
+    if(accountType === 'TEACHER'){
         return <Navigate to='/TeacherControls' state={{from: location}}/>
     }
-    if(accountType !== 'student'){
+    if(accountType !== 'STUDENT'){
         return <NoAccess/>
     }
 

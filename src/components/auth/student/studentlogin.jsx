@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import './studentauth.scss';
 import { Link } from 'react-router-dom';
 import { authLogin, getStudents } from '../../../api/services';
+import { UserContext } from '../../../App';
 
 export default function StudentLogin(){
     const [visible, setVisible] = useState(false);
+    const {setLogged, setType, setUserInfo, userInfo} = useContext(UserContext)
 
     const [studentInfo, setStudentInfo] = useState({
         login: '',
@@ -17,7 +19,9 @@ export default function StudentLogin(){
             login: studentInfo.login,
             password: studentInfo.password
           });
-
+          setLogged(true);
+          setType(response.data.role);
+          setUserInfo(response.data);
         } catch (error) {
         }
       };
