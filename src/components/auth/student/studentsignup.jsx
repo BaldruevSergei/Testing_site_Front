@@ -15,14 +15,15 @@ export default function StudentSignUp(){
      }
      const [visible, setVisible] = useState(false);
      const [password, setPassword] = useState('');
-     const [name, setName] = useState('');
+     const [firstName, setFirstName] = useState('');
+     const [lastName, setLastName] = useState('');
      const [confirmPassword, setConfirmPassword] = useState('');
      const [school, setSchool] = useState('');
      const [warning, setWarning] = useState('');
      const [grade, setGrade] = useState('');
      const [email, setMail] = useState('');
      const handleRegister = () => {
-        if(name === '' || school === '' || grade === '' || password === '' || confirmPassword === ''|| email === ''){
+        if(lastName === '' || firstName === '' || school === '' || grade === '' || password === '' || confirmPassword === ''|| email === ''){
             setWarning('Заполните все поля');
             return;
         }
@@ -47,7 +48,10 @@ export default function StudentSignUp(){
     <div className='inputs'>
     <span>
     <i className='fas fa-user-alt'></i>
-    <input type="text" placeholder='Имя' onChange={(e) => setName(e.target.value)} required/></span>
+    <input type="text" placeholder='Имя' onChange={(e) => setFirstName(e.target.value)} required/></span>
+    <span>
+    <i className='fas fa-user-alt'></i>
+    <input type="text" placeholder='Фамилия' onChange={(e) => setLastName(e.target.value)} required/></span>
     <span>
     <i className="fa fa-envelope"></i>
     <input type='email' placeholder='Имайл' onChange={(e) => setMail(e.target.value)} required/></span>

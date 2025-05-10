@@ -4,7 +4,6 @@
  @include size(auto,100vw,$black,$white);
  min-height: 100vh;
 
-
  .home{
      position: absolute;
      left: 0;
@@ -54,7 +53,7 @@
 }
 @media only screen and (max-width:550px){
     .AuthPage{
-        min-height: 110vh;
+        min-height: 130vh;
         flex-direction: column;
         .middle,.side{
             width: 80%;

@@ -65,18 +65,19 @@
             }
             
             .info{
-                height: 70%;
+                min-height: 70%;
                 padding-top:10px;
                 padding-left: 15px;
                 color: $white;
                 grid-column: 2;
                 grid-row: 1;
-                @include flex(start,space-between,column,0);
+                @include flex(start,space-between,column,1px);
                 a{
                     color: white;
                 }
                 div{
                     @include flex(start,start,column,8px);
+                    padding-top: 5px;
                     a{
                         @include flex(start,start,row,5px);
                         i{

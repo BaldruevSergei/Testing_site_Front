@@ -81,8 +81,7 @@
 .StudentAuthSignUp{
     @include size(auto,auto,$white,black);
     position: relative;
-    top: 50px;
-    min-height: 600px;
+    min-height: 400px;
     min-width: 550px;
     text-align: center;
     border-radius: 15px;
@@ -174,5 +173,6 @@
   }
   .StudentAuthSignUp{
     min-width: 90%;
+    top: 20px;
   }
 }
