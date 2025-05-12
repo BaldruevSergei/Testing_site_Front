@@ -30,5 +30,18 @@
     "globals": "^15.14.0",
     "sass": "^1.85.1",
     "vite": "^6.0.5"
-  }
+  },
+  "description": "Это клиентская часть системы тестирования, разработанная с использованием React и Vite. Приложение предоставляет удобный интерфейс для учителей и учеников, позволяя управлять тестами, проходить их и просматривать результаты.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaldruevSergei/Testing_site_Front.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BaldruevSergei/Testing_site_Front/issues"
+  },
+  "homepage": "https://github.com/BaldruevSergei/Testing_site_Front#readme"
 }
