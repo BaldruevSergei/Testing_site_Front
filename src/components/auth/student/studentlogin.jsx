@@ -23,6 +23,14 @@ export default function StudentLogin(){
           setType(response.data.role);
           setUserInfo(response.data);
         } catch (error) {
+          console.error('Axios error:', error.message);
+          if (error.response) {
+            console.error('Server responded:', error.response.data);
+          } else if (error.request) {
+            console.error('No response received:', error.request);
+          } else {
+            console.error('Other error:', error.message);
+          }
         }
       };
     const handleChange = (e) => {
