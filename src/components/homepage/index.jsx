@@ -59,7 +59,7 @@ function Main(){
 
      return <>
      <main>
-          <Acctestchange/>
+     
           <nav>
                <div>
                     <div className='banner'>👋Легкий доступ для учителей.</div>

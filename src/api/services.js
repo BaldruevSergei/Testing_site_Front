@@ -47,6 +47,9 @@ export const createExam = (examData) => API.post('/api/exams', examData);
 // --- CLASSES ---
 export const getClasses = () => API.get('/api/classes');
 export const createClass = (classData) => API.post('/api/classes', classData);
+<<<<<<< HEAD
 
 // --- Auth ---
 export const authLogin = (studentInfo) => API.post('/api/auth/login', studentInfo);
+=======
+>>>>>>> Gantulga_dev

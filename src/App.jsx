@@ -23,7 +23,11 @@ function App() {
 
   
   return (
+<<<<<<< HEAD
       <UserContext.Provider value={{ isLoggedIn, accountType, setLogged, setType, setUserInfo, userInfo }}>
+=======
+      <UserContext.Provider value={{ isLoggedIn, accountType, setLogged, setType }}>
+>>>>>>> Gantulga_dev
      <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepage />} />
