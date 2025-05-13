@@ -12,7 +12,7 @@ export default function SideBar(props){
             <i className={`fa fa-${!menu ? 'bars' : 'close'}`} id='toggleMenu' onClick={() => setMenu(!menu)}></i>
             <div className='container' style={{minHeight: menu ? '300px' : '0', height: menu ? 'auto' : '0'}}>
             <Link className='back' to='/'><i className='fas fa-graduation-cap'></i>EduTest</Link>
-            <div className='profile'>
+            <div className='profile'>   
                 <span className='pfp'><img src='' alt="" /><Link>Профиль</Link></span>
                 <span className='info'>
                     <p>Имя: {userInfo.firstName} {userInfo.lastName}</p>

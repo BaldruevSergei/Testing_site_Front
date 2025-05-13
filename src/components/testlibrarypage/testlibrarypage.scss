@@ -51,7 +51,8 @@
 
             .testContainer{
                 min-height: calc($mainMinHeight - 100px);
-                @include size(auto,100%,white,black);
+                @include size(auto,auto,white,black);
+                max-width: 95%;
                 box-shadow: 0px 0px 5px $main;
                 border-radius: 5px;
                 .description{

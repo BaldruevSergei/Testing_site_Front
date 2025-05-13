@@ -11,6 +11,7 @@ import Contacts from './components/contactspage'
 import AdminPage from './components/userpages/adminpage';
 import TeacherPage from './components/userpages/teacherpage';
 import { authLogin, getStudents, getSubjects } from './api/services';
+import TestResults from './components/testresultspage';
 const UserContext = createContext();
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path='/Contacts' element={<Contacts />} />
           <Route path='/AdminControls' element={<AdminPage/>} />
           <Route path='/TeacherControls' element={<TeacherPage/>}></Route>
+          <Route path='/TestLibrary/TestRun/TestResults/:id' element={<TestResults/>}></Route>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
