@@ -1,14 +1,13 @@
 const newTests = [
     {
         'id': 0,
-        'subject': 'Физика',
-        'topic': 'Квантовая механика',
+        'subject': 'History, Geography',
+        'topic': 'Mongol',
         'result': '95%',
         'startDate': '01.01.2022',
         'endDate': '15.01.2022',
         'maxTime': 60,
         'numQuestions': 2,
-        'maxPoints': 100,
         'numTries': 2,
         'isAccess': true,
         'isRunning': false,
@@ -16,22 +15,41 @@ const newTests = [
         'questions': [
             {
                 type: 'input',
-                title: 'arithmetics',
-                question: 'what is 1 + 1',
-                correctAnswer: 2,
+                title: 'Нэг зөв хариулттай асуулт (Хялбар)',
+                question: 'Монголын хамгийн өндөр уул аль нь вэ?',
+                correctAnswer: 'Хүйтэн оргил',
+                points: 1,
+                isAnswered: false,
             },
             {
                 type: 'multipleChoice',
-                title: 'riddle',
-                question: 'what year he was born?',
-                correctAnswerIndex: 2,
+                title: 'Олон зөв хариулттай, сонголттой асуулт (Дунд түвшин)',
+                question: 'Дараах ургамлуудаас аль нь эмийн ургамалд тооцогддог вэ? (2 ба түүнээс дээш зөв хариулт байж болно)',
+                correctAnswerIndex: [0, 2, 4],
                 answers: [
-                    '1995',
-                    '1992',
-                    '1994',
-                    '1998'
-                ]
-            }
+                    'Жамба',
+                    'Сонгино',
+                    'Үзэмчин харгана',
+                    'Хуайс',
+                    'Үрэл мод'
+                ],
+                points: 2,
+                isAnswered: false,
+            },
+            {
+                type: 'singleChoice',
+                title: 'Сонголттой асуулт — Зөвхөн нэг зөв хариулттай',
+                question: '"Монгол" гэх үгийн уг гарлын талаар олон онол, тайлбар байдаг. Эдгээрээс аль нь хэл шинжлэл, түүхийн үүднээс хамгийн өргөнөөр хүлээн зөвшөөрөгдсөн, шинжлэх ухааны үндэслэлтэй хариулт вэ?',
+                correctAnswerIndex: 3,
+                answers: [
+                    '“Мөнх улс” гэдэг үгнээс гаралтай – Монгол гэдэг нь "мөнх" гэсэн утгатай.',
+                    '“Манггуд” овгийн нэрнээс гаралтай – Эртний Монгол аймгийн нэр.',
+                    'Төв Азийн эртний хэлний “эрэлхэг” гэсэн утгатай үгнээс гаралтай.',
+                    'Монгол гэдэг үг нь XIII зуунд анх зохиогдсон, тодорхой угсаатны бүлгийг нэрлэх шинэ нэр байсан.'
+                ],
+                points: 3,
+                isAnswered: false,
+            },
         ]
     },
 ];

@@ -43,7 +43,21 @@
                     color: white;
                     @include flex(center,space-between,row,0);
                 }
+                
             }
+            .end{ 
+                @include size(40px,50%,$button,white);
+                @include flex(center,center,row,0);
+                margin: 50px auto;
+                border-radius: 5px;
+                border: none;
+                font-size: 1.2rem;
+                background-color: $buttonhover;
+                cursor: pointer;
+                &:hover{
+                    background-color: $button;
+                }
+             }
             .questionContainer{
                 min-height: calc($mainMinHeight / 3);
                 height: auto;
@@ -54,6 +68,7 @@
                     cursor: default;
                     margin-bottom: 40px;
                 }
+            
                 .answer{
                     min-height: 80px;
                     font-size: 1.3rem;
@@ -79,14 +94,23 @@
                         outline: 2px solid $button;
                     }
                     button{
-                        @include size(40px,120px,$button,white);
+                        @include size(40px,100%,$button,white);
+                        margin-right: 10px;
                         border: none;
                         border-radius: 5px;
                         font-size: 1.2rem;
+                        &:last-child{
+                            margin-right: 0;
+                        }
                     }
                     button:hover{
                         background-color: $buttonhover;
                         cursor: pointer;
+                    }
+                    .buttonContainer{
+                        @include flex(center,space-between,row,0);
+                        width: 100%;
+                        
                     }
                 }
 
@@ -124,7 +148,7 @@
                         }
                     }
                 }
-
+                
             }
 
             .arrows{
@@ -155,9 +179,7 @@
             }
 
 
-            .TestList{
-           
-            }
+        
         }
     }
 }

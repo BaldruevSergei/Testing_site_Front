@@ -3,20 +3,20 @@ import './sidebar.scss'
 import { useEffect, useState } from 'react';
 import TestList from '../testlist';
 export default function Sidebar(props){
-    const {id, numQuestions, maxTime, setQuestion, setList, testList} = props;
+    const {id, numQuestions, maxTime, setQuestion, setList, testList, setTestFinished, test, currentQuestion, currentSeconds, setSeconds} = props;
     const [questionsLists, setLists] = useState([]);
-    const [currentSeconds, setSeconds] = useState(0);
     
     useEffect(() => {
-        setSeconds(maxTime * 60)
         const q = [];
         for(let i = 1; i <= numQuestions; i++){
-            q.push(<li key={i} onClick={() => {setQuestion(i - 1); setList(false)}}><span>{i}</span></li>);
+            q.push(<li key={i} onClick={() => {setQuestion(i - 1); setList(false)}} style={{backgroundColor: test.questions[i - 1].isAnswered ? 'green' : '$questionColor'}}><span>{i}</span></li>);
+
         }
         setLists(q);
-    },[numQuestions])
-
+     
+    },[numQuestions, currentSeconds]);
     useEffect(() => {
+        setSeconds(maxTime * 60)
         const interval = setInterval(() => {
             setSeconds(prevSecond => {
                 if(prevSecond === 0){
@@ -29,7 +29,8 @@ export default function Sidebar(props){
     },[])
 
     const TestFinished = () => {
-        clearInterval(interval)
+        clearInterval(interval);
+        setTestFinished(true);
     }
     
     return <nav className='testSidebar'>

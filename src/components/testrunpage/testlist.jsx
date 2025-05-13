@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
 export default function TestList(props){
-    const {maxPoints, questions, setList, setQuestion} = props;
- return <div className="container">
+    const {maxPoints, questions, setList, setQuestion, finishTest} = props;
+ return <>
+ <div className="container">
             <h1>Список заданий: <div>{maxPoints}б</div></h1>
             <div className="questionContainer">
                 <ul className="list">
@@ -12,6 +13,10 @@ export default function TestList(props){
                     ))
                 }
                 </ul>
+               
             </div>
+            
         </div>
+        <div className="end" onClick={finishTest}>Завершить</div>
+        </>
 }
