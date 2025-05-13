@@ -1,1 +1,79 @@
-@use '../mixins.scss' as *;
+/* Accordion and Section Styling */
+.accordion-item {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.accordion-toggle {
+    width: 100%;
+    background: #f0f0f0;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.accordion-toggle:hover {
+    background: #e2e2e2;
+    transform: scale(1.05);
+}
+
+.accordion-content {
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+/* Fun Quote Styling */
+.fun-quote p {
+    font-style: italic;
+    color: #444;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-left: 5px solid #FF5733;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.fun-quote p:hover {
+    transform: scale(1.05);
+}
+
+/* Progress Bar Styling */
+.progressBar {
+    margin: 1rem 0;
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.progress {
+    height: 100%;
+    background-color: #FF5733;
+    transition: width 0.5s ease;
+    border-radius: 10px;
+}
+
+/* Logo Block */
+.logo-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: #333;
+    margin-top: 2rem;
+}
