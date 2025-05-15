@@ -8,7 +8,7 @@ import { UserContext } from '../../App';
 export default function Header(){
      const [menu, setMenu] = useState(false);
      const [loginMenu, setLogin] = useState(false);
-     const {isLoggedIn, accountType} = useContext(UserContext);
+     const {isLoggedIn, accountType, userInfo} = useContext(UserContext);
      return <header>
           <div className="logo">
           <i className="fa fa-bars" id="menuBtn" onClick={() => {setMenu(!menu); setLogin(false)}}></i>
@@ -40,8 +40,8 @@ export default function Header(){
                                         <img src={Logo} alt="" />
                                    </div>
                                    <div className="studentinfo">
-                                        <li>Имя: <div></div></li>
-                                        {accountType === 'student' && (<li>Класс: <div></div> </li>)}
+                                        <li>Имя: <div>{userInfo.firstName} {userInfo.lastName}</div></li>
+                                        {accountType === 'STUDENT' && (<li>Класс: <div>{userInfo.className}</div> </li>)}
                                         <li>Имайл: <div></div></li>
                                         <li>Роль: <div>{accountType}</div></li>
                                    </div>

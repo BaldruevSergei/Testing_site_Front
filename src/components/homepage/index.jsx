@@ -6,6 +6,11 @@ import Oros3Logo from '../../assets/oros3.svg';
 import { useEffect, useState } from 'react';
 import TestWork from '../../assets/testworkpage.png'
 import Acctestchange from '../acctestchange';
+import TeacherImg from '../../assets/teacher.png';
+import StudentImg from '../../assets/student.png';
+import TestImg from '../../assets/testing.png';
+import ResultImg from '../../assets/result.png';
+
 
 export default function Homepage(){
      return <div className='homepage' >
@@ -35,31 +40,31 @@ function Main(){
                title: 'Учитель',
                description: 'Учитель может создавать тесты, просматривать результаты и управлять учениками.',
                icon: 'fas fa-chalkboard-teacher',
-               image: '',
+               image: TeacherImg,
           },
           {
                title: 'Ученик',
                description: 'Ученик может проходить тесты, проверять результаты и улучшать свои знания.',
                icon: 'fas fa-user-graduate',
-               image: '',
+               image: StudentImg,
           },
           {
                title: 'Тестирование',
                description: 'Платформа позволяет проводить тестирование для учеников.',
                icon: 'fas fa-vials',
-               image: '',
+               image: TestImg,
           },
           {
                title: 'Результаты',
                description: 'Просматривайте результаты тестов и анализируйте их для улучшения знаний.',
                icon: 'fas fa-chart-line',
-               image: '',
+               image: ResultImg,
           },
-     ]
+     ];
+
 
      return <>
      <main>
-          <Acctestchange/>
           <nav>
                <div>
                     <div className='banner'>👋Легкий доступ для учителей.</div>
