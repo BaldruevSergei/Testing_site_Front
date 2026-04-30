@@ -1,17 +1,17 @@
-import API from '../api/api'; // ⬅️ your custom axios instance
+import API from '../api/api'; // 
 import MockAdapter from 'axios-mock-adapter';
 
 export function setupLoginMock() {
   const mock = new MockAdapter(API, { delayResponse: 500 });
 
   mock.onPost("/api/auth/login").reply(200, {
-    id: 567,
-    firstName: "Ivan",
-    lastName: "Ivanov",
-    login: "ivanov9a",
-    className: "10B",
+    id: 2,
+    firstName: "Erkhembileg",
+    lastName: "Batzorig",
+    login: "25B1NUM2640",
+    password: "password",
+    className: "12",
     role: "STUDENT"
   });
 
-  console.log("✅ Login mock is active!");
 }

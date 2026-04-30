@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+  "homepage": "BaldruevSergei.github.io/Testing_site_Front/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +10,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "host": "vite --host"
+    "host": "vite --host",
+    "pre-deploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
@@ -17,6 +20,7 @@
     "axios": "^1.9.0",
     "axios-mock-adapter": "^2.1.0",
     "cors": "^2.8.5",
+    "gh-pages": "^6.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.3.0"

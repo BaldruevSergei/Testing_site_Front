@@ -19,7 +19,10 @@ export default function StudentLogin(){
             login: studentInfo.login,
             password: studentInfo.password
           });
-          setLogged(true);
+          console.log(response)
+          if (response.data.login === studentInfo.login && response.data.password === studentInfo.password) {
+            setLogged(true)
+          }
           setType(response.data.role);
           setUserInfo(response.data);
         } catch (error) {

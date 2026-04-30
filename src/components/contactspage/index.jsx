@@ -6,16 +6,16 @@ export default function Contacts() {
         <>
         <Header/>
         <div className="contacts-page">
-            <h1>О проекте EXAMDIRECT.COM</h1>
+            <h1>EduTest</h1>
 
             <div className="contact-block">
                 <h3>Название компании</h3>
-                <p>ООО EXAMDIRECT</p>
+                <p>EduTest.com</p>
             </div>
 
             <div className="contact-block">
                 <h3>Телефон</h3>
-                <p>+976 9934 3567</p>
+                <p>+976 **** ****</p>
             </div>
 
             <div className="contact-block">
